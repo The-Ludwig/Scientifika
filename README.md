@@ -2,6 +2,9 @@ Scientifika
 ===========
 
 The new Scientifika webpage is being constructed here right now. 
+At Scientifika you can enjoy fun scientific talks on Fridays at 16:00 with delicious Swedish pastries. 
+The talks are generally directed towards any interested student or senior. 
+Scientifika is organized by the [Oscar Klein Centre](http://www.okc.albanova.se/).
 Hosted on [Github Pages](https://pages.github.com/), build with [Jekyll](https://jekyllrb.com/), using the CSS framework [Bootstrap](https://getbootstrap.com/) and theme inspired by the [Toucan theme](https://www.getzola.org/themes/toucan/).
 
 
