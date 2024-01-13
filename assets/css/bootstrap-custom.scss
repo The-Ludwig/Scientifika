@@ -2,11 +2,43 @@
 ---
 @charset "utf-8";
 
-$dark: #565656;
-$primary: hsl(347, 56%, 26%);
-$secondary: hsl(6, 56%, 26%);
-$light: hsl(12, 97%, 86%);
-$body-bg: mix($primary, #FFFFFF, 20%);
+$dark: hsl(347, 56%, 5%);
+$primary: hsl(347, 56%, 30%);
+$secondary: hsl(290, 56%, 30%);
+$light: hsl(347, 56%, 70%);
+$body-bg: hsl(347, 56%, 95%);
+$white:    hsl(347, 15%, 100%);
+$gray-100: hsl(347, 15%, 90%);
+$gray-200: hsl(347, 15%, 80%);
+$gray-300: hsl(347, 15%, 70%);
+$gray-400: hsl(347, 15%, 60%);
+$gray-500: hsl(347, 15%, 50%);
+$gray-600: hsl(347, 15%, 40%);
+$gray-700: hsl(347, 15%, 30%);
+$gray-800: hsl(347, 15%, 20%);
+$gray-900: hsl(347, 15%, 10%);
+$black:    hsl(347, 15%, 0%);
 $font-family-base: "Yanone Kaffeesatz", sans-serif;
 
 @import "bootstrap";
+
+.sf-logo {
+    font-family: "Dancing Script", sans-serif, bold;
+}
+
+.text-gray {
+    color: $gray-600;
+}
+
+.bg-light-hover:hover {
+    @extend .bg-light;
+}
+
+.bg-primary-hover:hover {
+    @extend .bg-primary;
+}
+
+.img-fluid-vertical {
+    max-height: 100%;
+    width: auto;
+}

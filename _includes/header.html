@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="p-0 container-fluid d-flex flex-column align-items-start">
+        <div class="d-flex navbar-brand">
+            <img class="img-fluid-vertical align-middle" src="{% link assets/Scientifika-logo-website-transparent-small.png %}"
+                style="height: 80px" />
+            <h1 class="sf-logo fw-bold display-1">
+                <span class="text-light" style="margin-right: -0.2em;">Scienti</span>
+                <span class="text-primary">Fika</span>
+            </h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse bg-dark container-fluid d-flex bg-dark rounded-2 fs-4 p-0" id="navbar">
+            <ul class="navbar-nav">
+                {% for navpagelink in site.data.navpages %}
+                {% assign navpage = site.pages | where: "name", navpagelink | first %}
+                <li class="nav-item">
+                    <a href="{% link {{navpagelink}} %}"
+                       class="nav-link p-2 px-4 text-light bg-primary-hover text-decoration-none {% if navpage.name == page.name %}bg-primary{% endif %} {% if forloop.first %}rounded-start-2{% endif %}">
+                        {{ navpage.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

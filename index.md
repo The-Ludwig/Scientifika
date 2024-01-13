@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "test"
+title: "Home"
+navname: "Home"
 ---
 # This is a heading with math $G_{\mu\nu} = T_{\mu\nu}$
 test

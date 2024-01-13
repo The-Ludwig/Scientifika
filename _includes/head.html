@@ -1,13 +1,14 @@
 <head>
-    <title>ScientiFika — {{ page.title }}</title>
+    <title>ScientiFika {% if page.title %}— {{ page.title }} {% endif %}</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="{{site.baseurl}}/favicon.ico" />
 
     <script defer src="{{site.baseurl}}/assets/js/custom.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz">
+    <!-- Load Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Dancing+Script">
 
 
     <!-- Include Bootstrap -->
