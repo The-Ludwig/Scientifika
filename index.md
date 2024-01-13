@@ -1,6 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
+title: "test"
 ---
+# This is a heading with math $G_{\mu\nu} = T_{\mu\nu}$
+test
+$$E=mc^2$$
+![img]({% link assets/Scientifika-logo.jpg %})

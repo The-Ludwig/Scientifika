@@ -28,9 +28,12 @@ github_username:  The-Ludwig
 permalink: pretty
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
-  - jekyll-feed
+    - jekyll-feed
+
+sass:
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -42,13 +45,13 @@ plugins:
 #
 exclude:
     - README.md
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+    - .sass-cache/
+    - .jekyll-cache/
+    - gemfiles/
+    - Gemfile
+    - Gemfile.lock
+    - node_modules/
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/

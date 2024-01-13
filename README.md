@@ -34,6 +34,10 @@ change to it's cloned directory
 ```bash
 cd Scientifika
 ```
+tell ruby to install plugins ('gems') locally
+```bash
+bundle config set --local path '.bundle'
+```
 install the required ruby packages
 ```bash
 bundle install

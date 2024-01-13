@@ -1,0 +1,12 @@
+---
+---
+@charset "utf-8";
+
+$dark: #565656;
+$primary: hsl(347, 56%, 26%);
+$secondary: hsl(6, 56%, 26%);
+$light: hsl(12, 97%, 86%);
+$body-bg: mix($primary, #FFFFFF, 20%);
+$font-family-base: "Yanone Kaffeesatz", sans-serif;
+
+@import "bootstrap";
