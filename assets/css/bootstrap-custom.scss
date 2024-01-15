@@ -26,6 +26,10 @@ $font-family-base: "Yanone Kaffeesatz", sans-serif;
     font-family: "Dancing Script", sans-serif, bold;
 }
 
+.sf-logo-image {
+  @include rfs(5rem, height);
+}
+
 .text-gray {
     color: $gray-600;
 }

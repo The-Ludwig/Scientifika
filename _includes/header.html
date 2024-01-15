@@ -1,24 +1,28 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand">
     <div class="p-0 container-fluid d-flex flex-column align-items-start">
-        <div class="d-flex navbar-brand">
-            <img class="img-fluid-vertical align-middle" src="{% link assets/Scientifika-logo-website-transparent-small.png %}"
-                style="height: 80px" />
-            <h1 class="sf-logo fw-bold display-1">
-                <span class="text-light" style="margin-right: -0.2em;">Scienti</span>
-                <span class="text-primary">Fika</span>
-            </h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <div class="row justify-content-between w-100 navbar-brand">
+            <div class="col-auto row g-0">
+                <img class="col img-fluid-vertical align-middle sf-logo-image"
+                    src="{% link assets/Scientifika-logo-website-transparent-small.png %}"/>
+                <h1 class="col sf-logo fw-bold display-1">
+                    <span class="text-light" style="margin-right: -0.2em;">Scienti</span>
+                    <span class="text-primary">Fika</span>
+                </h1>
+            </div>
+            <button class="col-auto navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarBar" aria-controls="navbarBar" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-primary"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse bg-dark container-fluid d-flex bg-dark rounded-2 fs-4 p-0" id="navbar">
+        <div class="collapse navbar-collapse bg-dark container-fluid bg-dark rounded-2 fs-4 p-0" id="navbarBar">
             <ul class="navbar-nav">
                 {% for navpagelink in site.data.navpages %}
                 {% assign navpage = site.pages | where: "name", navpagelink | first %}
                 <li class="nav-item">
                     <a href="{% link {{navpagelink}} %}"
-                       class="nav-link p-2 px-4 text-light bg-primary-hover text-decoration-none {% if navpage.name == page.name %}bg-primary{% endif %} {% if forloop.first %}rounded-start-2{% endif %}">
+                        class="nav-link p-2 px-4 text-light bg-primary-hover text-decoration-none {% if navpage.name == page.name %}bg-primary{% endif %} {% if forloop.first %}rounded-start-1{% endif %}"
+                        {% if navpage.name==page.nam %}aria-current="page" {% endif %}>
                         {{ navpage.title }}
                     </a>
                 </li>
