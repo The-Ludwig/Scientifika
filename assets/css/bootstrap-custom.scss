@@ -46,3 +46,28 @@ $font-family-base: "Yanone Kaffeesatz", sans-serif;
     max-height: 100%;
     width: auto;
 }
+
+// apply rounded corners at breakpoint in navbar correctly
+@each $name, $value in $grid-breakpoints {
+    @include media-breakpoint-up(#{$name}) {
+        .rounded-first-#{$name} {
+            @include border-start-radius(3px);
+        }
+    }
+    @include media-breakpoint-down(#{$name}) {
+        .rounded-first-#{$name} {
+            @include border-top-radius(3px);
+        }
+    }
+    @include media-breakpoint-down(#{$name}) {
+        .rounded-last-#{$name} {
+            @include border-bottom-radius(3px);
+        }
+    }
+}
+
+// This fixes apperent incompatibility between flex-column
+// And the navbar-collapse animations
+.navbar-collapse {
+    flex-basis: auto!important;
+}
