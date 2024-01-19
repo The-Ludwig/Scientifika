@@ -29,7 +29,12 @@ $font-size-base: 1.2rem;
 }
 
 .sf-logo-image {
+  transition: all .2s ease-in-out;  
   @include rfs(5rem, height);
+}
+
+.sf-logo-image:hover {
+    transform: rotate(-10deg) scale(1.15);
 }
 
 .text-gray {
