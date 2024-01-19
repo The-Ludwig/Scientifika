@@ -20,6 +20,8 @@ $gray-900: hsl(347, 15%, 10%);
 $black:    hsl(347, 15%, 0%);
 $font-family-base: "Yanone Kaffeesatz", sans-serif;
 
+$font-size-base: 1.2rem;
+
 @import "bootstrap";
 
 .sf-logo {
@@ -51,17 +53,17 @@ $font-family-base: "Yanone Kaffeesatz", sans-serif;
 @each $name, $value in $grid-breakpoints {
     @include media-breakpoint-up(#{$name}) {
         .rounded-first-#{$name} {
-            @include border-start-radius(3px);
+            @include border-start-radius($border-radius);
         }
     }
     @include media-breakpoint-down(#{$name}) {
         .rounded-first-#{$name} {
-            @include border-top-radius(3px);
+            @include border-top-radius($border-radius);
         }
     }
     @include media-breakpoint-down(#{$name}) {
         .rounded-last-#{$name} {
-            @include border-bottom-radius(3px);
+            @include border-bottom-radius($border-radius);
         }
     }
 }

@@ -3,7 +3,15 @@ layout: default
 title: "Home"
 navname: "Home"
 ---
-# This is a heading with math $G_{\mu\nu} = T_{\mu\nu}$
-test
-$$E=mc^2$$
-![img]({% link assets/Scientifika-logo.jpg %})
+# Welcome to ScientiFika
+![img]({% link assets/Scientifika-logo.jpg %}){: .w-25}
+
+ToDos:
+- Content
+- Make Google-Form link available via password
+- Show upcoming Talks on the home page
+- Enhance Styling of Talk
+- Vector-Logo?
+- Colors?
+- Get a nice URL
+- About-section/legality
