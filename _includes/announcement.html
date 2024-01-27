@@ -1,0 +1,15 @@
+<div class="card m-3 shadow">
+    {% if include.talk.img %}
+    <img src="{% link {{include.talk.img}}%}" class="card-img-top" alt="Title Image of Talk {{include.talk.title}}"
+        loading="lazy">
+    {% endif %}
+    <div class="card-header">
+        <div class="row justify-content-between">
+            <h3 class="mb-0 col-auto">{{post.title}}</h3>
+            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }}</span>
+        </div>
+    </div>
+    <div class="card-body col-auto">
+        {{include.talk.content}}
+    </div>
+</div>

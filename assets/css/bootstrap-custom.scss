@@ -24,6 +24,11 @@ $font-size-base: 1.2rem;
 
 @import "bootstrap";
 
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 .sf-searchbar {
     background: $gray-400;
 }

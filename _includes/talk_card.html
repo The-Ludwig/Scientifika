@@ -1,26 +1,27 @@
-<div class="col-lg-6 sf-talk-card" data-date='{{ include.talk.date | date: "%Y-%m-%d" }}'>
-    <div class="card m-3 shadow">
-        {% if include.talk.img %}
-        <img src="{% link {{include.talk.img}}%}" class="card-img-top" alt="Title Image of Talk {{include.talk.title}}" loading="lazy">
-        {% endif %}
-        <div class="card-header">
-            <div class="row justify-content-between">
-                <a class="col-auto" href="{% link {{ include.talk.path }} %}">
-                    <h4 class="mb-0">{{post.title}}</h4>
-                </a>
-                <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {{ include.talk.speaker }}</span>
-            </div>
+<div class="card m-3 shadow">
+    {% if include.talk.img %}
+    <img src="{% link {{include.talk.img}}%}" class="card-img-top" alt="Title Image of Talk {{include.talk.title}}"
+        loading="lazy">
+    {% endif %}
+    <div class="card-header">
+        <div class="row justify-content-between">
+            <a class="col-auto" href="{% link {{ include.talk.path }} %}">
+                <h4 class="mb-0">{{post.title}}</h4>
+            </a>
+            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {{ include.talk.speaker }}</span>
         </div>
-        <div class="card-body col-auto">
-            <div class="row justify-content-between">
-                <h5 class="col-auto">Abstract:</h5>
-                {% if include.talk.presentation %}
-                <div class="col-auto">
-                    <a type="button" class="btn btn-primary btn-sm" href="{% link assets/presentations/{{include.talk.presentation}} %}" target="_blank">Presentation</a>
-                </div>
-                {% endif %}
+    </div>
+    <div class="card-body col-auto text-justify">
+        <div class="row justify-content-between">
+            <h5 class="col-auto">Abstract:</h5>
+            {% if include.talk.presentation %}
+            <div class="col-auto">
+                <a type="button" class="btn btn-primary btn-sm"
+                    href="{% link assets/presentations/{{include.talk.presentation}} %}"
+                    target="_blank">Presentation</a>
             </div>
-            {{include.talk.content}}
+            {% endif %}
         </div>
+        {{include.talk.content}}
     </div>
 </div>
