@@ -10,7 +10,6 @@ ToDos:
 - Content
 - Make Google-Form link available via password
 - Show upcoming Talks on the home page
-- Enhance Styling of Talk
 - Vector-Logo?
 - Colors?
 - Get a nice URL

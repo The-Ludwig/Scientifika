@@ -24,12 +24,16 @@ $font-size-base: 1.2rem;
 
 @import "bootstrap";
 
+.sf-searchbar {
+    background: $gray-400;
+}
+
 // Animated navbar toggler
 .sf-navbar-toggler-icon {
     display: grid;
     position: relative;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.25em;
+    height: 1.25em;
     vertical-align: middle;
 }
 
@@ -50,7 +54,6 @@ $font-size-base: 1.2rem;
 
 :not(.collapsed) > .sf-navbar-toggler-icon > .bar {
     &:nth-child(1){
-        transform: translateY(-50%);
         transform: translateY(-50%) rotate(45deg);
         top: 50%;
     }
@@ -62,7 +65,6 @@ $font-size-base: 1.2rem;
     }
 
     &:nth-child(3){
-        transform: translateY(-50%);
         transform: translateY(-50%) rotate(-45deg);
         top: 50%;
     }
@@ -72,11 +74,52 @@ $font-size-base: 1.2rem;
     display: inline-block;
     border-radius: 5px;
     height: 5px;
-    width: 1.5em;
+    width: 1.25em;
     background-color: $gray-500;
     position: absolute;
     vertical-align: middle;
     transition: all .5s ease-in-out;  
+}
+
+.sf-navbar-toggler-icon-minor {
+    display: grid;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+.collapsed > .sf-navbar-toggler-icon-minor > .bar {
+    &:nth-child(1){
+        transform: translateY(-50%) translateX(29.3%) rotate(45deg);
+    }
+
+    &:nth-child(2){
+        transform: translateY(-50%) translateX(-29.3%) rotate(-45deg);
+    }
+}
+
+:not(.collapsed) > .sf-navbar-toggler-icon-minor > .bar {
+    &:nth-child(1){
+        transform: translateY(-50%) translateX(29.3%) rotate(-45deg);
+    }
+
+    &:nth-child(2){
+        transform: translateY(-50%) translateX(-29.3%) rotate(45deg);
+    }
+}
+
+.sf-navbar-toggler-icon-minor > .bar {
+    display: inline-block;
+    border-radius: 5px;
+    height: 5px;
+    width: 1em;
+    background-color: $primary;
+    position: absolute;
+    vertical-align: middle;
+    transition: all .5s ease-in-out;  
+    top: 50%;
+
 }
 // End animated navbar toggler
 
