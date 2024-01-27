@@ -18,7 +18,7 @@
                 </div>
             </button>
         </div>
-        <div class="collapse navbar-collapse w-100" id="navbarBar">
+        <div class="collapse sf-navbar-collapse navbar-collapse w-100" id="navbarBar">
             <ul class="navbar-nav bg-dark w-100 bg-dark rounded-2 fs-4 p-0">
                 {% for navpagelink in site.data.navpages %}
                 {% assign navpage = site.pages | where: "name", navpagelink | first %}

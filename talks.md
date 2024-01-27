@@ -27,17 +27,13 @@ navname: "All Talks"
               </ul>
               <div class="d-flex" role="search" id="sf-search-talks">
                 <div class="input-group me-2">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
                     <button class="btn btn-outline-primary" type="button" id="button-addon2"><i class="bi bi-x"></i></button>
                 </div>
               </div>
             </div>
           </div>
         </nav>
-        <!-- <div class="col-lg-12 card"> -->
-        <!--     <div class="card-body"> -->
-        <!--     </div> -->
-        <!-- </div> -->
         {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
         {% for post in talks_by_date %}
         <div class="col-lg-6 sf-talk-card" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
