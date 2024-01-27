@@ -1,0 +1,14 @@
+<div class="col-lg-6">
+    <div class="card m-3 shadow">
+        {% if include.talk.img %}
+        <img src="{% link {{include.talk.img}}%}" class="card-img-top" alt="Title Image of Talk {{include.talk.title}}">
+        {% endif %}
+        <div class="card-header">
+            <a href="{% link {{ include.talk.path }} %}"> {{post.title}} </a>
+            <span class="ml-auto">Speaker: {{ include.talk.speaker  }}</span>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><b>Abstract:</b>{{include.talk.content}}</p>
+        </div>
+    </div>
+</div>

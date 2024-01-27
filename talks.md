@@ -7,19 +7,7 @@ navname: "All Talks"
     <div class="row">
         {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
         {% for post in talks_by_date %}
-        <div class="col-lg-6">
-            <div class="card m-3 shadow">
-                {% if post.img %}
-                <img src="{% link {{post.img}}%}" class="card-img-top" alt="Title Image of Talk {{post.title}}">
-                {% endif %}
-                <div class="card-header">
-                    <a href="{% link {{ post.path }} %}"> {{post.title}} </a>
-                </div>
-                <div class="card-body">
-                    <p class="card-text"><b>Abstract:</b>{{post.content}}</p>
-                </div>
-            </div>
-        </div>
+        {% include talk_card.html talk=post%}
         {% endfor %}
     </div>
 </div>

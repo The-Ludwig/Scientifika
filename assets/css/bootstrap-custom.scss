@@ -24,6 +24,63 @@ $font-size-base: 1.2rem;
 
 @import "bootstrap";
 
+// Animated navbar toggler
+.sf-navbar-toggler-icon {
+    display: grid;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+.collapsed > .sf-navbar-toggler-icon > .bar {
+    &:nth-child(1){
+        top: 0;
+    }
+
+    &:nth-child(2){
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+    &:nth-child(3){
+        bottom: 0%;
+    }
+}
+
+:not(.collapsed) > .sf-navbar-toggler-icon > .bar {
+    &:nth-child(1){
+        transform: translateY(-50%);
+        transform: translateY(-50%) rotate(45deg);
+        top: 50%;
+    }
+
+    &:nth-child(2){
+        transform: translateY(-50%);
+        top: 50%;
+        opacity: 0;
+    }
+
+    &:nth-child(3){
+        transform: translateY(-50%);
+        transform: translateY(-50%) rotate(-45deg);
+        top: 50%;
+    }
+}
+
+.sf-navbar-toggler-icon > .bar {
+    display: inline-block;
+    border-radius: 5px;
+    height: 5px;
+    width: 1.5em;
+    background-color: $gray-500;
+    position: absolute;
+    vertical-align: middle;
+    transition: all .5s ease-in-out;  
+}
+// End animated navbar toggler
+
+
 .sf-logo {
     font-family: "Dancing Script", sans-serif, bold;
 }
