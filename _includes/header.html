@@ -1,20 +1,21 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid p-0 d-flex flex-column align-items-start">
         <div class="row justify-content-between w-100 navbar-brand">
-            <div class="col-auto row g-0">
-                <a class="col" href="{% link index.md %}">
-                    <img class="img-fluid-vertical align-middle sf-logo-image"
-                        src="{% link assets/Scientifika-logo-website-transparent-small.png %}" />
-                </a>
+            <a class="col-auto row g-0 sf-logo-header" href="{% link index.md %}">
+                <img class="img-fluid-vertical align-middle sf-logo-image"
+                    src="{% link assets/Scientifika-logo-website-transparent-small.png %}" />
                 <h1 class="col sf-logo fw-bold display-1">
-                    <span class="text-light" style="margin-right: -0.2em;">Scienti</span>
-                    <span class="text-primary">Fika</span>
+                    <span class="text-primary" style="margin-right: -0.2em;">Scienti</span>
+                    <span class="text-secondary">Fika</span>
                 </h1>
-            </div>
-            <button class="col-auto navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBar"
-                aria-controls="navbarBar" aria-expanded="true" aria-label="Toggle navigation">
+            </a>
+            <button class="col-auto navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarBar" aria-controls="navbarBar" aria-expanded="true"
+                aria-label="Toggle navigation">
                 <div class="sf-navbar-toggler-icon">
-                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
             </button>
         </div>
@@ -24,7 +25,7 @@
                 {% assign navpage = site.pages | where: "name", navpagelink | first %}
                 <li class="nav-item rounded-start-1">
                     <a href="{% link {{navpagelink}} %}"
-                        class="nav-link p-2 px-4 text-light bg-primary-hover text-decoration-none {% if navpage.name == page.name %}bg-primary{% endif %} {% if forloop.first %}rounded-first-lg{% endif %} {% if forloop.last %}rounded-last-lg{% endif %}"
+                        class="nav-link p-2 px-4 text-secondary bg-primary-hover text-decoration-none {% if navpage.name == page.name %}bg-primary{% endif %} {% if forloop.first %}rounded-first-lg{% endif %} {% if forloop.last %}rounded-last-lg{% endif %}"
                         {% if navpage.name==page.nam %}aria-current="page" {% endif %}>
                         {{ navpage.title }}
                     </a>

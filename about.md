@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+footer: true
 ---
 
 Here, the new Scientifika webpage is being constructed right now.

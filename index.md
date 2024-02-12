@@ -27,7 +27,7 @@ Welcome to ScientiFika
                 {% assign today_date = 'now' | date: '%s' %}
                 {% assign pre_date = post.date | date: '%s' %}
                 {% if today_date > pre_date %} {% continue %} {% endif %}
-                <div class="col-lg-6 sf-talk-card d-none" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
+                <div class="col-lg-12 sf-talk-card d-none" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
                 {% include talk_card.html talk=post%}
                 </div>
                 {% endfor %}
@@ -43,8 +43,8 @@ Welcome to ScientiFika
             </div>
         </div>
         <div class="col-lg-3 d-lg-flex justify-content-start flex-column">
-            <a class="btn btn-primary w-lg-75 m-2 fs-5">Attendance List</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5">Give a Talk</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light">Attendance List</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light">Give a Talk</a>
         </div>
     </div>
 </div>

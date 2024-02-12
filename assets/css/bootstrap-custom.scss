@@ -1,23 +1,28 @@
 ---
 ---
 @charset "utf-8";
+@use 'sass:color';
 
-$dark: hsl(347, 56%, 5%);
-$primary: hsl(347, 56%, 30%);
-$secondary: hsl(290, 56%, 30%);
-$light: hsl(347, 56%, 70%);
-$body-bg: hsl(347, 56%, 95%);
-$white:    hsl(347, 15%, 100%);
-$gray-100: hsl(347, 15%, 90%);
-$gray-200: hsl(347, 15%, 80%);
-$gray-300: hsl(347, 15%, 70%);
-$gray-400: hsl(347, 15%, 60%);
-$gray-500: hsl(347, 15%, 50%);
-$gray-600: hsl(347, 15%, 40%);
-$gray-700: hsl(347, 15%, 30%);
-$gray-800: hsl(347, 15%, 20%);
-$gray-900: hsl(347, 15%, 10%);
-$black:    hsl(347, 15%, 0%);
+// use color palette
+// orange color palette is really hard
+// copied some colors off
+// https://www.firewatchgame.com/
+$dark: #210002;
+$primary: #5c1715;
+$secondary: #e0711d;
+$light: color.scale(#ffaf00, $whiteness: 30%);
+$body-bg: color.scale(#ffaf00, $whiteness: 40%);
+$white:     color.change($dark, $whiteness: 100%);
+$gray-100:  color.change($dark, $whiteness: 90%);
+$gray-200:  color.change($dark, $whiteness: 80%);
+$gray-300:  color.change($dark, $whiteness: 70%);
+$gray-400:  color.change($dark, $whiteness: 60%);
+$gray-500:  color.change($dark, $whiteness: 50%);
+$gray-600:  color.change($dark, $whiteness: 40%);
+$gray-700:  color.change($dark, $whiteness: 30%);
+$gray-800:  color.change($dark, $whiteness: 20%);
+$gray-900:  color.change($dark, $whiteness: 10%);
+$black:     color.change($dark, $whiteness: 0%);
 $font-family-base: "Yanone Kaffeesatz", sans-serif;
 
 $font-size-base: 1.2rem;
@@ -30,7 +35,7 @@ $font-size-base: 1.2rem;
 }
 
 .sf-searchbar {
-    background: $gray-400;
+    background: $gray-100;
 }
 
 // Animated navbar toggler
@@ -133,12 +138,16 @@ $font-size-base: 1.2rem;
     font-family: "Dancing Script", sans-serif, bold;
 }
 
+.sf-logo-header {
+    text-decoration: none;
+}
+
 .sf-logo-image {
   transition: all .2s ease-in-out;  
   @include rfs(5rem, height);
 }
 
-.sf-logo-image:hover {
+.sf-logo-header:hover > .sf-logo-image {
     transform: rotate(-10deg) scale(1.15);
 }
 
