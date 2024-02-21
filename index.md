@@ -3,22 +3,14 @@ layout: default
 title: "Home"
 navname: "Home"
 ---
-<h1>
-Welcome to ScientiFika
-</h1>
 <div class="container">
     <div class="row flex-column-reverse flex-lg-row justify-content-between">
         <div class="col-lg-9">
-            ToDos:
-            <ul>
-                <li>Content</li>
-                <li>Make Google-Form link available via password</li>
-                <li>Show upcoming Talks on the home page</li>
-                <li>Vector-Logo?</li>
-                <li>Colors?</li>
-                <li>Get a nice URL</li>
-                <li>About-section/legality</li>
-            </ul>
+            <span class="col sf-logo fw-bold display-4">
+                    <span class="text-primary" style="margin-right: -0.2em;">Scienti</span>
+                    <span class="text-secondary">Fika</span>
+                </span>
+is the place to be every Friday afternoon if you want to learn more about a variety of research fields while enjoying delicious Fika! We bring together researchers across different universities in Stockholm to share their passion for science and related topics, while nourishing a deep sense of community among junior researchers.
             <h3>Upcoming Talks</h3>
             <div class="row" id="sf-upcoming">
                 {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
@@ -43,8 +35,9 @@ Welcome to ScientiFika
             </div>
         </div>
         <div class="col-lg-3 d-lg-flex justify-content-start flex-column">
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light">Attendance List</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light">Give a Talk</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" href="">Attendance List</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" href="https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing">Mailing List</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" href="https://docs.google.com/forms/d/e/1FAIpQLSdvz9m5FOU57K3mNYNjH04mTR2UGB1KAubC5khwf6u6_u0NUg/viewform?usp=sf_link">Give a Talk</a>
         </div>
     </div>
 </div>
