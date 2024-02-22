@@ -10,7 +10,7 @@
 $dark: #210002;
 $primary: #5c1715;
 $secondary: #e0711d;
-$light: color.scale(#e0711d, $whiteness: 50%);
+$light: color.scale(#e0711d, $whiteness: 70%);
 $body-bg: color.scale(#ffaf00, $whiteness: 80%);
 $white:     color.change($dark, $whiteness: 100%);
 $gray-100:  color.change($dark, $whiteness: 90%);
