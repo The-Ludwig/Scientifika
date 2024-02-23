@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "All Talks"
-navname: "All Talks"
+title: "Talks"
+navname: "Talks"
 ---
 <div class="container">
     <div class="row sf-talks">
-        <nav class="navbar navbar-expand-lg rounded sf-searchbar" id="sf-searchbar-talks">
+        <nav class="navbar navbar-expand-lg rounded sf-searchbar bg-light mb-4" id="sf-searchbar-talks">
           <div class="container-fluid">
             <h5 class="navbar-brand mb-0" href="#">Filter</h5>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sf-searchbar" aria-controls="sf-searchbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@ navname: "All Talks"
                     Ordering
                   </a>
                   <ul class="dropdown-menu">
-                    <li><button class="dropdown-item bg-primary" href="#" id="sf-order-fp">Future<i class="bi bi-arrow-right"></i>Past</button></li>
+                    <li><button class="dropdown-item bg-light" href="#" id="sf-order-fp">Future<i class="bi bi-arrow-right"></i>Past</button></li>
                     <li><button class="dropdown-item" href="#" id="sf-order-pf">Past<i class="bi bi-arrow-right"></i>Future</button></li>
                   </ul>
                 </li>

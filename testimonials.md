@@ -28,14 +28,6 @@ in touch with OKC/Nordita research outside of one's own field."
 <figure class="mb-5 text-end">
   <blockquote class="blockquote fst-italic">
     <p>
-"As an audience member, I have found the talks I've seen so far to be much more rewarding than a typical research seminar."
-    </p>
-  </blockquote>
-</figure>
-
-<figure class="mb-5 text-end">
-  <blockquote class="blockquote fst-italic">
-    <p>
 "Besides the vast variety of topics that are made accessible across the board, I have met great people that I wouldn't have otherwise. As the audience is made of academics, the talks remain at a level above the talks that are just public lectures but below the research level (where certainly I wouldn't understand most of them!). Thus, these events have been able to find a sweet spot that is quite rare to see elsewhere."
     </p>
   </blockquote>

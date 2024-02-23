@@ -7,8 +7,8 @@ let talk_cards = talk_container.querySelectorAll(".sf-talk-card");
 
 let talks = Array.from(talk_cards).map((card) => {return {element: card, date: card.dataset.date}});
 
-button_fp.addEventListener("pointerup", () => { button_pf.classList.remove("bg-primary"); button_fp.classList.add("bg-primary"); reorder_talks(false);});
-button_pf.addEventListener("pointerup", () => { button_fp.classList.remove("bg-primary"); button_pf.classList.add("bg-primary"); reorder_talks(true);});
+button_fp.addEventListener("pointerup", () => { button_pf.classList.remove("bg-light"); button_fp.classList.add("bg-light"); reorder_talks(false);});
+button_pf.addEventListener("pointerup", () => { button_fp.classList.remove("bg-light"); button_pf.classList.add("bg-light"); reorder_talks(true);});
 
 function reorder_talks(anti = false) {
     let num = anti ? -1 : 1;

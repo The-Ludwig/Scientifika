@@ -11,7 +11,7 @@ navname: "Home"
                     <img class="img-fluid" src="{% link assets/Scientifika-logo-website-transparent.png %}"/>
                 </div>
                 <div class="col-8 col-lg-10">
-                    <span class="col sf-logo fw-bold display-4">
+                    <span class="col sf-logo fw-bold display-6">
                         <span class="text-primary" style="margin-right: -0.2em;">Scienti</span>
                         <span class="text-secondary">Fika</span>
                     </span>
@@ -20,7 +20,7 @@ navname: "Home"
             </div>
             <h2>Upcoming Talks Fridays, 16:00 @ Nordita 6th floor</h2>
             <div class="row" id="sf-upcoming">
-                {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
+                {% assign talks_by_date = site.categories.talk | sort: "date" %}
                 <!-- This skips all the posts which are in the past, so the main page has a smaller loading time -->
                 {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
                 {% assign tomorrow_date = 'now' | date: '%s' | minus: seconds | date: '%s' %}
@@ -43,9 +43,9 @@ navname: "Home"
             </div>
         </div>
         <div class="col-lg-3 d-lg-flex mb-4 justify-content-start flex-column">
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing">Join the Mailing List</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdvz9m5FOU57K3mNYNjH04mTR2UGB1KAubC5khwf6u6_u0NUg/viewform?usp=sf_link">Give a Talk!</a>
             <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScB_JMoqayw-absw3h_QmKlvyxnLHYckkmsoyeT4fbrG1NThg/viewform?usp=sf_link">Attendance Form</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing">Mailing List</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdvz9m5FOU57K3mNYNjH04mTR2UGB1KAubC5khwf6u6_u0NUg/viewform?usp=sf_link">Give a Talk</a>
         </div>
     </div>
 </div>
