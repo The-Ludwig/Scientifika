@@ -25,7 +25,7 @@ $gray-900:  color.change($dark, $whiteness: 10%);
 $black:     color.change($dark, $whiteness: 0%);
 $font-family-base: "Yanone Kaffeesatz", sans-serif;
 
-$font-size-base: 1.2rem;
+$font-size-base: 1.5rem;
 
 @import "bootstrap";
 
@@ -89,7 +89,7 @@ $font-size-base: 1.2rem;
 
 :not(.collapsed) > .sf-navbar-toggler-icon > .bar {
     &:nth-child(1){
-        transform: translateY(-50%) rotate(45deg);
+        transform: translateY(-50%) rotate(225deg);
         top: 50%;
     }
 
@@ -100,7 +100,7 @@ $font-size-base: 1.2rem;
     }
 
     &:nth-child(3){
-        transform: translateY(-50%) rotate(-45deg);
+        transform: translateY(-50%) rotate(-225deg);
         top: 50%;
     }
 }
@@ -136,11 +136,11 @@ $font-size-base: 1.2rem;
 
 :not(.collapsed) > .sf-navbar-toggler-icon-minor > .bar {
     &:nth-child(1){
-        transform: translateY(-50%) translateX(29.3%) rotate(45deg);
+        transform: translateY(-50%) translateX(29.3%) rotate(-135deg);
     }
 
     &:nth-child(2){
-        transform: translateY(-50%) translateX(-29.3%) rotate(-45deg);
+        transform: translateY(-50%) translateX(-29.3%) rotate(135deg);
     }
 }
 

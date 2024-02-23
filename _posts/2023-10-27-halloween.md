@@ -3,7 +3,7 @@ layout: talk
 title:  "Halloween event: Is everything we know wrong?"
 date:   2023-10-27
 categories: talk
-img: assets/images/2023-12-00.jpg
+<!-- img: assets/images/2023-12-00.jpg -->
 speaker: Alex Brown & Jacob Osman Hjortlund
 ---
 Speaker: Alex Brown
