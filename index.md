@@ -32,8 +32,9 @@ navname: "Home"
                 </div>
                 {% endfor %}
             </div>
+            {% if site.categories.announcement %}
             <h2 class="mt-5">Announcements</h2>
-            <div class="row">
+            <div class="row" id="sf-announcements">
                 {% assign announcements_by_date = site.categories.announcement | sort: "date" | reverse %}
                 {% for post in announcements_by_date %}
                 <div class="" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
@@ -41,6 +42,7 @@ navname: "Home"
                 </div>
                 {% endfor %}
             </div>
+            {% endif %}
         </div>
         <div class="col-lg-3 d-lg-flex mb-4 justify-content-start flex-column">
             <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing">Join the Mailing List</a>

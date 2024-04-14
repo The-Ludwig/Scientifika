@@ -14,21 +14,22 @@ On Friday afternoons, junior researchers in physics and related sciences in Stoc
 </h2>
 
 <div class="row justify-content-center mb-5">
+    {% for member in site.data.team %}
     <div class="col-lg-10">
         <div class="card mb-3 bg-light">
           <div class="row g-0">
             <div class="col-lg-3 rounded-first-lg">
                 <div class="row align-content-center justify-content-center w-100 h-100">
                     <div class="col">
-                        <img src="{{ "assets/images/team/gui.jpg" | relative_url }}" class="img-fluid rounded-2 m-2" alt="Foto of Gui" style="max-height: 30vh;">
+                        <img src="{{ member.img | relative_url }}" class="img-fluid rounded-2 m-2" alt="Foto of Gui" style="max-height: 30vh;">
                     </div>
                 </div>
             </div>
             <div class="col-lg-9">
               <div class="card-body">
-                <h5 class="card-title">Gui Franzmann</h5>
+                  <h5 class="card-title">{{ member.name }}</h5>
                 <p class="card-text ">
-                    Originally from Brazil, he was one of the founders of the ScientiFika. Inspired by lunch talks during his PhD at McGill University which only juniors research could attend while eating pizza, Gui made sure that from the very beginning delicious Fika was served after every talk. Gui mostly worries about foundational questions in physics, and currently does research in quantum gravity by focusing both on the foundations of quantum mechanics and the foundations of gravity. He shares his time between Nordita and the Department of Philosophy, while most of his free time is spent climbing!
+                {{ member.text }}
                 </p>
                 <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
               </div>
@@ -36,76 +37,7 @@ On Friday afternoons, junior researchers in physics and related sciences in Stoc
           </div>
         </div>
     </div>
-    <div class="col-lg-10">
-        <div class="card mb-3 bg-light">
-          <div class="row g-0">
-            <div class="col-lg-3 rounded-first-lg">
-                <div class="row align-content-center justify-content-center w-100 h-100">
-                    <div class="col">
-                        <img src="{{ "assets/images/team/nikki.jpg" | relative_url }}" class="img-fluid rounded-2 m-2" alt="Foto of Gui" style="max-height: 30vh;">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-9">
-              <div class="card-body">
-                <h5 class="card-title">Nikki Arendse</h5>
-                <p class="card-text ">
-                    As a Dutch astronomer living in Stockholm, she finds great joy in biking around and ice skating on frozen lakes during winter. Her research focusses on gravitationally lensed supernovae and how they can be applied to determine the Universe’s expansion rate. In addition to beautiful observations of these phenomena, she also uses watercolour paintings to communicate her research. Her passion for science outreach began as a co-founder of ‘Astronomy on Tap’ in Copenhagen, and continues in Stockholm as ScientiFika team member.
-                </p>
-                <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="col-lg-10">
-        <div class="card mb-3 bg-light">
-          <div class="row g-0">
-            <div class="col-lg-3 rounded-first-lg">
-                <div class="row align-content-center justify-content-center w-100 h-100">
-                    <div class="col">
-                        <img src="{{ "assets/images/team/nadia.jpg" | relative_url }}" class="img-fluid rounded-2 m-2" alt="Foto of Gui" style="max-height: 30vh;">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-9">
-              <div class="card-body">
-                <h5 class="card-title">Nadia Flodgren</h5>
-                <p class="card-text ">
-                She is a PhD student at Stockholm University but originally from the north of Sweden. In her research she focuses on applying concepts from mathematics to simplify calculations in perturbative quantum field theory. In her free time she enjoys hiking in nature with her dog.
-                </p>
-                <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="col-lg-10">
-        <div class="card mb-3 bg-light">
-          <div class="row g-0">
-            <div class="col-lg-3 rounded-first-lg">
-                <div class="row align-content-center justify-content-center w-100 h-100">
-                    <div class="col">
-                        <img src="{{ "assets/images/team/ludwig.jpg" | relative_url }}" class="img-fluid rounded-2 m-2" alt="Foto of Gui" style="max-height: 30vh;">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-9">
-              <div class="card-body">
-                <h5 class="card-title">Ludwig Neste</h5>
-                <p class="card-text ">
-                    He is a PhD student at Stockholm University, researching the mysterious neutrinos with IceCube, 
-                    located at the SouthPole.
-                    Ludwig joined the team to build this website, so if you find any bugs, he is to blame.
-                    He goes crazy when trying out new and weird coffees, and is still working on his latte-art.
-                </p>
-                <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-    </div>
+    {% endfor %}
 </div>
 
 <h2>Sponsors</h2>
