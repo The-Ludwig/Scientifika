@@ -118,7 +118,7 @@ $font-size-base: 1.5rem;
     transition: all .5s ease-in-out;  
 }
 
-.sf-navbar-toggler-icon-minor {
+.sf-navbar-toggler-icon-container {
     display: grid;
     position: relative;
     width: 1em;
@@ -126,7 +126,7 @@ $font-size-base: 1.5rem;
     vertical-align: middle;
 }
 
-.collapsed > .sf-navbar-toggler-icon-minor > .bar {
+.collapsed > .sf-navbar-toggler-icon-minor .bar {
     &:nth-child(1){
         transform: translateY(-50%) translateX(29.3%) rotate(-45deg);
     }
@@ -136,7 +136,7 @@ $font-size-base: 1.5rem;
     }
 }
 
-:not(.collapsed) > .sf-navbar-toggler-icon-minor > .bar {
+:not(.collapsed) > .sf-navbar-toggler-icon-minor .bar {
     &:nth-child(1){
         transform: translateY(-50%) translateX(29.3%) rotate(-135deg);
     }
@@ -146,7 +146,7 @@ $font-size-base: 1.5rem;
     }
 }
 
-.sf-navbar-toggler-icon-minor > .bar {
+.sf-navbar-toggler-icon-minor .bar {
     display: inline-block;
     border-radius: 5px;
     height: 5px;

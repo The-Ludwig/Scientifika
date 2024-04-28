@@ -9,7 +9,7 @@ navname: "Talks"
           <div class="container-fluid">
             <h5 class="navbar-brand mb-0" href="#">Filter</h5>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sf-searchbar" aria-controls="sf-searchbar" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="sf-navbar-toggler-icon-minor">
+                <div class="sf-navbar-toggler-icon-minor sf-navbar-toggler-icon-container">
                     <div class="bar"></div><div class="bar"></div>
                 </div>
             </button>
@@ -37,7 +37,7 @@ navname: "Talks"
         {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
         {% for post in talks_by_date %}
         <div class="col-lg-6 sf-talk-card" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-        {% include talk_card.html talk=post%}
+        {% include talk_card.html talk=post id=forloop.index0%}
         </div>
         {% endfor %}
     </div>

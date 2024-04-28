@@ -8,12 +8,25 @@
             <a class="col-auto" href="{% link {{ include.talk.path }} %}">
                 <h4 class="mb-0">{{post.title}}</h4>
             </a>
+        </div>
+        <div class="row justify-content-between">
             <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {{ include.talk.speaker }}</span>
+            <button class="col-auto collapsed btn pe-5 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#abstract-{{include.id}}" aria-expanded="false" aria-controls="abstract-{{include.id}}">
+                <div class="sf-navbar-toggler-icon-minor">
+                    <div class="row">
+                        <div class="col-auto">
+                            Abstract
+                        </div>
+                        <div class="sf-navbar-toggler-icon-container mt-1">
+                            <div class="bar"></div><div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </button>
         </div>
     </div>
-    <div class="card-body col-auto text-justify bg-light">
+    <div class="card-body col-auto text-justify bg-light collapse" id="abstract-{{include.id}}">
         <div class="row justify-content-between">
-            <h5 class="col-auto">Abstract:</h5>
             {% if include.talk.presentation %}
             <div class="col-auto">
                 <a type="button" class="btn btn-primary btn-sm text-light"
@@ -22,6 +35,8 @@
             </div>
             {% endif %}
         </div>
+        <div class="collapse" id="abstract-{{include.id}}">
         {{include.talk.content}}
+        </div>
     </div>
 </div>

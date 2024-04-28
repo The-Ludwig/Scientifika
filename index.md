@@ -38,7 +38,7 @@ navname: "Home"
                 {% assign announcements_by_date = site.categories.announcement | sort: "date" | reverse %}
                 {% for post in announcements_by_date %}
                 <div class="" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-                {% include announcement.html talk=post%}
+                {% include announcement.html talk=post id=forloop.index0%}
                 </div>
                 {% endfor %}
             </div>
