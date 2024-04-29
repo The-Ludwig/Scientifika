@@ -37,7 +37,7 @@ navname: "Talks"
         {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
         {% for post in talks_by_date %}
         <div class="col-lg-6 sf-talk-card" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-        {% include talk_card.html talk=post id=forloop.index0%}
+        {% include talk_card.html talk=post id=forloop.index0 initcollapsed=true fixedheight="4.4em" %}
         </div>
         {% endfor %}
     </div>

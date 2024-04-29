@@ -3,29 +3,29 @@
     <img src="{% link {{include.talk.img}}%}" class="card-img-top" alt="Title Image of Talk {{include.talk.title}}"
         loading="lazy">
     {% endif %}
-    <div class="card-header">
+    <div class="card-header" {% if include.fixedheight %}style="min-height: {{include.fixedheight}};"{% endif %}>
+        <a class="text-decoration-none" href="{% link {{ include.talk.path }} %}">
+            <h4 class="mb-0 card-title">{{post.title}}</h4>
+        </a>
+    </div>
+    <div class="card-body text-justify bg-light rounded py-2">
         <div class="row justify-content-between">
-            <a class="col-auto" href="{% link {{ include.talk.path }} %}">
-                <h4 class="mb-0">{{post.title}}</h4>
-            </a>
-        </div>
-        <div class="row justify-content-between">
-            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {{ include.talk.speaker }}</span>
-            <button class="col-auto collapsed btn pe-5 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#abstract-{{include.id}}" aria-expanded="false" aria-controls="abstract-{{include.id}}">
+            <button class="col-auto {% if include.initcollapsed %}collapsed{% endif %} btn pe-5 py-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#abstract-{{include.id}}" aria-expanded="true" aria-controls="abstract-{{include.id}}">
                 <div class="sf-navbar-toggler-icon-minor">
                     <div class="row">
+                       <div class="sf-navbar-toggler-icon-container mt-1 ms-3">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
                         <div class="col-auto">
                             Abstract
-                        </div>
-                        <div class="sf-navbar-toggler-icon-container mt-1">
-                            <div class="bar"></div><div class="bar"></div>
                         </div>
                     </div>
                 </div>
             </button>
+            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {{ include.talk.speaker }}</span>
         </div>
-    </div>
-    <div class="card-body col-auto text-justify bg-light collapse" id="abstract-{{include.id}}">
         <div class="row justify-content-between">
             {% if include.talk.presentation %}
             <div class="col-auto">
@@ -35,6 +35,8 @@
             </div>
             {% endif %}
         </div>
-        {{include.talk.content}}
+        <div class="{% unless include.initcollapsed %}show{% endunless %} collapse" id="abstract-{{include.id}}">
+            {{include.talk.content}}
+        </div>
     </div>
 </div>

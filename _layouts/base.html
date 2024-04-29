@@ -8,9 +8,9 @@
 
         {{ content }}
 
-        {% if page.footer %}
+        {% unless page.nofooter %}
         {% include footer.html %}
-        {% endif %}
+        {% endunless %}
     </div>
 </body>
 
