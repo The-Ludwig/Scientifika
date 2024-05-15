@@ -3,6 +3,9 @@
 @charset "utf-8";
 @use 'sass:color';
 
+// needed for some fine-tuning (related to icons)
+$enable-negative-margins: true;
+
 // use color palette
 // orange color palette is really hard
 // copied some colors off
@@ -205,6 +208,11 @@ $font-size-base: 1.5rem;
     @include media-breakpoint-down(#{$name}) {
         .rounded-first-#{$name} {
             @include border-top-radius($border-radius);
+        }
+    }
+    @include media-breakpoint-up(#{$name}) {
+        .rounded-last-#{$name} {
+            @include border-end-radius($border-radius);
         }
     }
     @include media-breakpoint-down(#{$name}) {
