@@ -4,7 +4,7 @@ title: "Talks"
 navname: "Talks"
 ---
 <div class="container">
-    <div class="row sf-talks">
+    <div class="row sf-talks justify-content-center">
         <nav class="navbar navbar-expand-lg rounded sf-searchbar bg-light mb-4" id="sf-searchbar-talks">
           <div class="container-fluid">
             <h5 class="navbar-brand mb-0" href="#">Filter</h5>
@@ -36,8 +36,8 @@ navname: "Talks"
         </nav>
         {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
         {% for post in talks_by_date %}
-        <div class="col-lg-6 sf-talk-card" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-        {% include talk_card.html talk=post id=forloop.index0 initcollapsed=true fixedheight="4.4em" %}
+        <div class="col-lg-9 sf-talk-card" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
+        {% include talk_card.html talk=post id=forloop.index0 initcollapsed=true %}
         </div>
         {% endfor %}
     </div>

@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </button>
-            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {{ include.talk.speaker }}</span>
+            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {% if include.talk.link %}<a href="{{include.talk.link}}" target="_blank">{% endif %}{{ include.talk.speaker }} {% if include.talk.link %}</a>{% endif %}</span>
         </div>
         <div class="row justify-content-between">
             {% if include.talk.presentation %}
