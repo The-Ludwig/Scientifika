@@ -18,19 +18,21 @@ navname: "Home"
                     is the place to be every Friday afternoon if you want to learn more about a variety of research fields while enjoying delicious Fika! We bring together researchers across different universities in Stockholm to share their passion for science and related topics, while nourishing a deep sense of community among junior researchers.
                 </div>
             </div>
-            <h2>Upcoming Talks Fridays, 16:00 @ Nordita 6th floor</h2>
-            <div class="row" id="sf-upcoming">
-                {% assign talks_by_date = site.categories.talk | sort: "date" %}
-                <!-- This skips all the posts which are in the past, so the main page has a smaller loading time -->
-                {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
-                {% assign tomorrow_date = 'now' | date: '%s' | minus: seconds | date: '%s' %}
-                {% for post in talks_by_date %}
-                {% assign pre_date = post.date | date: '%s' %}
-                {% if tomorrow_date > pre_date %} {% continue %} {% endif %}
-                <div class="col-lg-12 sf-talk-card d-none" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-                {% include talk_card.html talk=post%}
+            <div id="sf-upcoming-section">
+                <h2>Upcoming Talks Fridays, 16:00 @ Nordita 6th floor</h2>
+                <div class="row" id="sf-upcoming">
+                    {% assign talks_by_date = site.categories.talk | sort: "date" %}
+                    <!-- This skips all the posts which are in the past, so the main page has a smaller loading time -->
+                    {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
+                    {% assign tomorrow_date = 'now' | date: '%s' | minus: seconds | date: '%s' %}
+                    {% for post in talks_by_date %}
+                    {% assign pre_date = post.date | date: '%s' %}
+                    {% if tomorrow_date > pre_date %} {% continue %} {% endif %}
+                    <div class="col-lg-12 sf-talk-card d-none" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
+                    {% include talk_card.html talk=post%}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
             {% if site.categories.announcement %}
             <h2 class="mt-5">Announcements</h2>
