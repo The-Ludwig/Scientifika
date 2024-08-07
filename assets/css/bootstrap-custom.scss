@@ -28,11 +28,15 @@ $gray-700:  color.change($dark, $whiteness: 30%);
 $gray-800:  color.change($dark, $whiteness: 20%);
 $gray-900:  color.change($dark, $whiteness: 10%);
 $black:     color.change($dark, $whiteness: 0%);
-$font-family-base: "Yanone Kaffeesatz", sans-serif;
+$font-family-base: "Poppins", sans-serif;
 
-$font-size-base: 1.5rem;
+$font-size-base: 1.2rem;
 
 @import "bootstrap";
+
+// .nav-link,h1,h2 {
+//     font-family: Lora;
+// }
 
 .sf-bg-blurred > div:first-child {
     position: absolute;
@@ -60,8 +64,8 @@ $font-size-base: 1.5rem;
 }
 
 .text-justify {
-    text-align: justify;
-    text-justify: inter-word;
+    // text-align: justify;
+    // text-justify: inter-word;
 }
 
 // .sf-searchbar {
