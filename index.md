@@ -8,7 +8,7 @@ navname: "Home"
         <div class="col-lg-9">
             <div class="mb-5 row">
                 <div class="col-4 col-lg-2">
-                    <img class="img-fluid" src="{% link assets/images/logo.svg %}"/>
+                    <img class="img-fluid" src="{% link assets/Scientifika-logo.svg %}"/>
                 </div>
                 <div class="col-8 col-lg-10">
                     <span class="col sf-logo fw-bold display-6">
