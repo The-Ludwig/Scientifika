@@ -178,7 +178,7 @@ $font-size-base: 1.2rem;
 
 .sf-logo-image {
   transition: all .2s ease-in-out;  
-  @include rfs(5rem, height);
+  @include rfs(15rem, height);
 }
 
 .sf-logo-header:hover > .sf-logo-image {
