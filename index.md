@@ -20,7 +20,7 @@ navname: "Home"
             </div>
             <div id="sf-upcoming-section">
                 <h2>Upcoming</h2>
-                <h4>Friday 16:00 @ Nordita 6th floor</h4>
+                <h4>Friday 16:00 @ Nordita <span class="thick-strikethrough">6th floor</span><span class="text-secondary">5th floor</span></h4>
                 <div class="row" id="sf-upcoming">
                     {% assign talks_by_date = site.categories.talk | sort: "date" %}
                     <!-- This skips all the posts which are in the past, so the main page has a smaller loading time -->

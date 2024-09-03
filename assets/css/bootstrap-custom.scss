@@ -38,6 +38,23 @@ $font-size-base: 1.2rem;
 
 @import "bootstrap";
 
+.thick-strikethrough {
+    position: relative;
+    display: inline-block;
+}
+
+.thick-strikethrough::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%; /* Adjust this value to move the line up or down */
+    height: 3px; /* This controls the thickness of the strikethrough */
+    background-color: currentColor; /* This makes the line the same color as the text */
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
 // .nav-link,h1,h2 {
 //     font-family: Lora;
 // }
