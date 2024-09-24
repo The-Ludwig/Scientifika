@@ -5,7 +5,14 @@ layout: default
     Title: <h2>{{page.title}}</h2>
 </div>
 <div>
-    Speaker: {{page.speaker}}
+    Speaker:
+    {% if page.link %}
+    <a href="{{page.link}}" target="_blank">
+    {% endif %}
+    {{page.speaker}}
+    {% if page.link %}
+    </a>
+    {% endif %}
 </div>
 <div>
     Date: {{page.date | date: "%Y-%m-%d" }}
