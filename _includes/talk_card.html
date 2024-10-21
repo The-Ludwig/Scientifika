@@ -1,42 +1,93 @@
 <div class="card m-3 shadow bg-light">
-    {% if include.talk.img %}
-    <img src="{% link {{include.talk.img}}%}" class="card-img-top" alt="Title Image of Talk {{include.talk.title}}"
-        loading="lazy">
+  <div class="card-header" {% if include.fixedheight %}style="min-height: {{include.fixedheight}};" {% endif %}>
+    <a class="text-decoration-none" href="{% link {{ include.talk.path }} %}">
+      <h4 class="mb-0 card-title">{{post.title}}</h4>
+    </a>
+  </div>
+  {% if include.talk.img %}
+    {% if include.talk.img.path %}
+      {% assign img_src = include.talk.img.path | relative_url %}
+    {% else if include.talk.img.href %}
+      {% assign img_src = {{include.talk.img.href}} %}
+    {% else %}
+      {% assign img_src = {% link {{include.talk.img}} %} %}
     {% endif %}
-    <div class="card-header" {% if include.fixedheight %}style="min-height: {{include.fixedheight}};"{% endif %}>
-        <a class="text-decoration-none" href="{% link {{ include.talk.path }} %}">
-            <h4 class="mb-0 card-title">{{post.title}}</h4>
-        </a>
+    <img src="{{img_src}}" class="sf-talk-card-img" 
+      {% if include.talk.img.center %}
+        style="object-position: {{include.talk.img.center}};"
+      {% endif %}
+      alt="Title Image of Talk {{include.talk.title}}" loading="lazy">
+  {% endif %}
+  {% if include.talk.imgs %}
+  <div id="carousel-{{include.id}}" class="carousel slide">
+    <div class="carousel-indicators">
+    {% for img in include.talk.imgs %}
+      <button type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide-to="{{forloop.index0}}" 
+        {% if forloop.first %}
+          class="active" aria-current="true" 
+        {% endif %}
+        aria-label="Image {{forloop.index}}"></button>
+    {% endfor %}
     </div>
-    <div class="card-body text-justify bg-light rounded py-2">
-        <div class="row justify-content-between">
-            <button class="col-auto {% if include.initcollapsed %}collapsed{% endif %} btn pe-5 py-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#abstract-{{include.id}}" aria-expanded="true" aria-controls="abstract-{{include.id}}">
-                <div class="sf-navbar-toggler-icon-minor">
-                    <div class="row">
-                       <div class="sf-navbar-toggler-icon-container mt-1 ms-3">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="col-auto">
-                            Abstract
-                        </div>
-                    </div>
-                </div>
-            </button>
-            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {% if include.talk.link %}<a href="{{include.talk.link}}" target="_blank">{% endif %}{{ include.talk.speaker }} {% if include.talk.link %}</a>{% endif %}</span>
-        </div>
-        <div class="row justify-content-between">
-            {% if include.talk.presentation %}
-            <div class="col-auto">
-                <a type="button" class="btn btn-primary btn-sm text-light"
-                    href="{% link assets/presentations/{{include.talk.presentation}} %}"
-                    target="_blank">Presentation</a>
+    <div class="carousel-inner">
+    {% for img in include.talk.imgs %}
+      {% if img.path %}
+        {% assign img_src = img.path | relative_url %}
+      {% else if include.talk.img.href %}
+        {% assign img_src = {{img.href}} %}
+      {% else %}
+        {% assign img_src = {% link {{img}} %} %}
+      {% endif %}
+      <div class="carousel-item active">
+      <img src="{{img_src}}" class="sf-talk-card-img" 
+        {% if img.center %}
+          style="object-position: {{img.center}};"
+        {% endif %}
+        alt="Title Image of Talk {{include.talk.title}}" loading="lazy">
+      </div>
+    {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  {% endif %}
+  <div class="card-body text-justify bg-light rounded py-2">
+    <div class="row justify-content-between">
+      <button class="col-auto {% if include.initcollapsed %}collapsed{% endif %} btn pe-5 py-0" type="button"
+        data-bs-toggle="collapse" data-bs-target="#abstract-{{include.id}}" aria-expanded="true"
+        aria-controls="abstract-{{include.id}}">
+        <div class="sf-navbar-toggler-icon-minor">
+          <div class="row">
+            <div class="sf-navbar-toggler-icon-container mt-1 ms-3">
+              <div class="bar"></div>
+              <div class="bar"></div>
             </div>
-            {% endif %}
+            <div class="col-auto">
+              Abstract
+            </div>
+          </div>
         </div>
-        <div class="mt-3 {% unless include.initcollapsed %}show{% endunless %} collapse" id="abstract-{{include.id}}">
-            {{include.talk.content}}
-        </div>
+      </button>
+      <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {% if include.talk.link %}<a
+          href="{{include.talk.link}}" target="_blank">{% endif %}{{ include.talk.speaker }} {% if include.talk.link
+          %}</a>{% endif %}</span>
     </div>
+    <div class="row justify-content-between">
+      {% if include.talk.presentation %}
+      <div class="col-auto">
+        <a type="button" class="btn btn-primary btn-sm text-light"
+          href="{% link assets/presentations/{{include.talk.presentation}} %}" target="_blank">Presentation</a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="mt-3 {% unless include.initcollapsed %}show{% endunless %} collapse" id="abstract-{{include.id}}">
+      {{include.talk.content}}
+    </div>
+  </div>
 </div>

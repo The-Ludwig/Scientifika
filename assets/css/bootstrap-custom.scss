@@ -1,5 +1,5 @@
----
----
+--- 
+--- 
 @charset "utf-8";
 @use 'sass:color';
 
@@ -21,17 +21,17 @@ $secondary: #e0711d;
 // $body-bg: color.scale(#ffaf00, $whiteness: 80%);
 $light: color.scale(#ffbb69, $whiteness: 20%);
 $body-bg: color.scale(#ffbb69, $whiteness: 50%);
-$white:     color.change($dark, $whiteness: 100%);
-$gray-100:  color.change($dark, $whiteness: 90%);
-$gray-200:  color.change($dark, $whiteness: 80%);
-$gray-300:  color.change($dark, $whiteness: 70%);
-$gray-400:  color.change($dark, $whiteness: 60%);
-$gray-500:  color.change($dark, $whiteness: 50%);
-$gray-600:  color.change($dark, $whiteness: 40%);
-$gray-700:  color.change($dark, $whiteness: 30%);
-$gray-800:  color.change($dark, $whiteness: 20%);
-$gray-900:  color.change($dark, $whiteness: 10%);
-$black:     color.change($dark, $whiteness: 0%);
+$white: color.change($dark, $whiteness: 100%);
+$gray-100: color.change($dark, $whiteness: 90%);
+$gray-200: color.change($dark, $whiteness: 80%);
+$gray-300: color.change($dark, $whiteness: 70%);
+$gray-400: color.change($dark, $whiteness: 60%);
+$gray-500: color.change($dark, $whiteness: 50%);
+$gray-600: color.change($dark, $whiteness: 40%);
+$gray-700: color.change($dark, $whiteness: 30%);
+$gray-800: color.change($dark, $whiteness: 20%);
+$gray-900: color.change($dark, $whiteness: 10%);
+$black: color.change($dark, $whiteness: 0%);
 $font-family-base: "Poppins", sans-serif;
 
 $font-size-base: 1.2rem;
@@ -39,54 +39,69 @@ $font-size-base: 1.2rem;
 @import "bootstrap";
 
 .thick-strikethrough {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .thick-strikethrough::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%; /* Adjust this value to move the line up or down */
-    height: 3px; /* This controls the thickness of the strikethrough */
-    background-color: currentColor; /* This makes the line the same color as the text */
-    transform: translateY(-50%);
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  /* Adjust this value to move the line up or down */
+  height: 3px;
+  /* This controls the thickness of the strikethrough */
+  background-color: currentColor;
+  /* This makes the line the same color as the text */
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 // .nav-link,h1,h2 {
 //     font-family: Lora;
 // }
+//
 
-.sf-bg-blurred > div:first-child {
-    position: absolute;
-    filter: blur(5px); 
-    margin: 8px;
-    height: calc(100% - 16px);
-    width: calc(100% - 16px);
-    background-position: center; 
-    background-size: cover;
-    z-index: 2;
-}
-.sf-bg-blurred > div:nth-child(2) {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-position: center; 
-    background-size: cover;
-    z-index: 1;
+.sf-talk-card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 40vh;
 }
 
-.sf-bg-blurred > img {
-    z-index: 5;
-    top: 50%;
-    transform: translateY(-50%);
+.sf-talk-img {
+  max-width: 700px;
+}
+
+.sf-bg-blurred>div:first-child {
+  position: absolute;
+  filter: blur(5px);
+  margin: 8px;
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.sf-bg-blurred>div:nth-child(2) {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.sf-bg-blurred>img {
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .text-justify {
-    // text-align: justify;
-    // text-justify: inter-word;
+  // text-align: justify;
+  // text-justify: inter-word;
 }
 
 // .sf-searchbar {
@@ -95,169 +110,174 @@ $font-size-base: 1.2rem;
 
 // Animated navbar toggler
 .sf-navbar-toggler-icon {
-    display: grid;
-    position: relative;
-    width: 1.25em;
-    height: 1.25em;
-    vertical-align: middle;
+  display: grid;
+  position: relative;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: middle;
 }
 
-.collapsed > .sf-navbar-toggler-icon > .bar {
-    &:nth-child(1){
-        top: 0;
-    }
+.collapsed>.sf-navbar-toggler-icon>.bar {
+  &:nth-child(1) {
+    top: 0;
+  }
 
-    &:nth-child(2){
-        transform: translateY(-50%);
-        top: 50%;
-    }
+  &:nth-child(2) {
+    transform: translateY(-50%);
+    top: 50%;
+  }
 
-    &:nth-child(3){
-        bottom: 0%;
-    }
+  &:nth-child(3) {
+    bottom: 0%;
+  }
 }
 
-:not(.collapsed) > .sf-navbar-toggler-icon > .bar {
-    &:nth-child(1){
-        transform: translateY(-50%) rotate(225deg);
-        top: 50%;
-    }
+:not(.collapsed)>.sf-navbar-toggler-icon>.bar {
+  &:nth-child(1) {
+    transform: translateY(-50%) rotate(225deg);
+    top: 50%;
+  }
 
-    &:nth-child(2){
-        transform: translateY(-50%);
-        top: 50%;
-        opacity: 0;
-    }
+  &:nth-child(2) {
+    transform: translateY(-50%);
+    top: 50%;
+    opacity: 0;
+  }
 
-    &:nth-child(3){
-        transform: translateY(-50%) rotate(-225deg);
-        top: 50%;
-    }
+  &:nth-child(3) {
+    transform: translateY(-50%) rotate(-225deg);
+    top: 50%;
+  }
 }
 
-.sf-navbar-toggler-icon > .bar {
-    display: inline-block;
-    border-radius: 5px;
-    height: 5px;
-    width: 1.25em;
-    background-color: $gray-500;
-    position: absolute;
-    vertical-align: middle;
-    transition: all .5s ease-in-out;  
+.sf-navbar-toggler-icon>.bar {
+  display: inline-block;
+  border-radius: 5px;
+  height: 5px;
+  width: 1.25em;
+  background-color: $gray-500;
+  position: absolute;
+  vertical-align: middle;
+  transition: all .5s ease-in-out;
 }
 
 .sf-navbar-toggler-icon-container {
-    display: grid;
-    position: relative;
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
+  display: grid;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
 }
 
-.collapsed > .sf-navbar-toggler-icon-minor .bar {
-    &:nth-child(1){
-        transform: translateY(-50%) translateX(29.3%) rotate(-45deg);
-    }
+.collapsed>.sf-navbar-toggler-icon-minor .bar {
+  &:nth-child(1) {
+    transform: translateY(-50%) translateX(29.3%) rotate(-45deg);
+  }
 
-    &:nth-child(2){
-        transform: translateY(-50%) translateX(-29.3%) rotate(45deg);
-    }
+  &:nth-child(2) {
+    transform: translateY(-50%) translateX(-29.3%) rotate(45deg);
+  }
 }
 
-:not(.collapsed) > .sf-navbar-toggler-icon-minor .bar {
-    &:nth-child(1){
-        transform: translateY(-50%) translateX(29.3%) rotate(-135deg);
-    }
+:not(.collapsed)>.sf-navbar-toggler-icon-minor .bar {
+  &:nth-child(1) {
+    transform: translateY(-50%) translateX(29.3%) rotate(-135deg);
+  }
 
-    &:nth-child(2){
-        transform: translateY(-50%) translateX(-29.3%) rotate(135deg);
-    }
+  &:nth-child(2) {
+    transform: translateY(-50%) translateX(-29.3%) rotate(135deg);
+  }
 }
 
 .sf-navbar-toggler-icon-minor .bar {
-    display: inline-block;
-    border-radius: 5px;
-    height: 5px;
-    width: 1em;
-    background-color: $primary;
-    position: absolute;
-    vertical-align: middle;
-    transition: all .5s ease-in-out;  
-    top: 50%;
+  display: inline-block;
+  border-radius: 5px;
+  height: 5px;
+  width: 1em;
+  background-color: $primary;
+  position: absolute;
+  vertical-align: middle;
+  transition: all .5s ease-in-out;
+  top: 50%;
 
 }
+
 // End animated navbar toggler
 
 
 .sf-logo {
-    font-family: "Dancing Script";
-    @include rfs(5rem, height);
-    @include media-breakpoint-down(lg) { 
-        @include rfs(6rem);
-    }
+  font-family: "Dancing Script";
+  @include rfs(5rem, height);
+
+  @include media-breakpoint-down(lg) {
+    @include rfs(6rem);
+  }
 }
 
 .sf-logo-header {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .sf-logo-image {
-    transition: all .2s ease-in-out;  
-    @include rfs(5rem, height);
-    @include media-breakpoint-down(lg) { 
-        @include rfs(6rem, height);
-    }
+  transition: all .2s ease-in-out;
+  @include rfs(5rem, height);
+
+  @include media-breakpoint-down(lg) {
+    @include rfs(6rem, height);
+  }
 }
 
-.sf-logo-header:hover > .sf-logo-image {
-    transform: rotate(10deg) scale(1.15);
+.sf-logo-header:hover>.sf-logo-image {
+  transform: rotate(10deg) scale(1.15);
 }
 
 .text-gray {
-    color: $gray-600;
+  color: $gray-600;
 }
 
 .bg-light-hover:hover {
-    @extend .bg-light;
+  @extend .bg-light;
 }
 
 .bg-primary-hover:hover {
-    @extend .bg-primary;
+  @extend .bg-primary;
 }
 
 .img-fluid-vertical {
-    max-height: 100%;
-    width: auto;
+  max-height: 100%;
+  width: auto;
 }
 
 // apply rounded corners at breakpoint in navbar correctly
 @each $name, $value in $grid-breakpoints {
-    @include media-breakpoint-up(#{$name}) {
-        .rounded-first-#{$name} {
-            @include border-start-radius($border-radius);
-        }
+  @include media-breakpoint-up(#{$name}) {
+    .rounded-first-#{$name} {
+      @include border-start-radius($border-radius);
     }
-    @include media-breakpoint-down(#{$name}) {
-        .rounded-first-#{$name} {
-            @include border-top-radius($border-radius);
-        }
-    }
+  }
 
-    @include media-breakpoint-up(#{$name}) {
-        .rounded-last-#{$name} {
-            @include border-end-radius($border-radius);
-        }
+  @include media-breakpoint-down(#{$name}) {
+    .rounded-first-#{$name} {
+      @include border-top-radius($border-radius);
     }
-    @include media-breakpoint-down(#{$name}) {
-        .rounded-last-#{$name} {
-            @include border-bottom-radius($border-radius);
-        }
+  }
+
+  @include media-breakpoint-up(#{$name}) {
+    .rounded-last-#{$name} {
+      @include border-end-radius($border-radius);
     }
+  }
+
+  @include media-breakpoint-down(#{$name}) {
+    .rounded-last-#{$name} {
+      @include border-bottom-radius($border-radius);
+    }
+  }
 
 }
 
 // This fixes apperent incompatibility between flex-column
 // And the navbar-collapse animations
 .sf-navbar-collapse {
-    flex-basis: auto!important;
+  flex-basis: auto !important;
 }
