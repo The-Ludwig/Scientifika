@@ -38,12 +38,12 @@
       {% else %}
         {% assign img_src = {% link {{img}} %} %}
       {% endif %}
-      <div class="carousel-item active">
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
       <img src="{{img_src}}" class="sf-talk-card-img" 
         {% if img.center %}
           style="object-position: {{img.center}};"
         {% endif %}
-        alt="Title Image of Talk {{include.talk.title}}" loading="lazy">
+        loading="lazy" >
       </div>
     {% endfor %}
     </div>
