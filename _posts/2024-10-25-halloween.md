@@ -4,6 +4,10 @@ title:  "🎃🎃 Spooky Singularities & 🦇 & Spooky Food  🎃🎃"
 date:   2024-10-25
 categories: talk
 speaker: "<a target='_blank' href='https://www.su.se/english/profiles/alyo0806-1.654954#'>Alice Young</a> & Liliana Ferreira & <a href='https://www.kth.se/profile/marlp?l=en' target='_blank'>Marjorie Ladd Parada</a>  "
+imgs:
+  - path: assets/images/talks/2024-10-25.png
+  - path: assets/images/talks/2024-10-25-01.png
+  - path: assets/images/talks/2024-10-25-02.png
 ---
 🎃🎃🎃For Halloween, we present not one, not two, but three very scary talks!👻👻👻
 

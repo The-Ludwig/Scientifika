@@ -2,78 +2,72 @@
 layout: default
 ---
 <div>
-    Title: <h2>{{page.title}}</h2>
+  Title: <h2>{{page.title}}</h2>
 </div>
 <div>
-    Speaker:
-    {% if page.link %}
-    <a href="{{page.link}}" target="_blank">
+  Speaker:
+  {% if page.link %}
+  <a href="{{page.link}}" target="_blank">
     {% endif %}
     {{page.speaker}}
     {% if page.link %}
-    </a>
-    {% endif %}
+  </a>
+  {% endif %}
 </div>
 <div>
-    Date: {{page.date | date: "%Y-%m-%d" }}
+  Date: {{page.date | date: "%Y-%m-%d" }}
 </div>
 
 <div class="mt-3">
-    <h3>Abstract:</h3>
-    {{ content }}
+  <h3>Abstract:</h3>
+  {{ content }}
 </div>
 
 {% if page.img %}
-    {% if page.img.path %}
-      {% assign img_src = page.img.path | relative_url %}
-    {% else if page.img.href %}
-      {% assign img_src = {{page.img.href}} %}
-    {% else %}
-      {% assign img_src = {% link {{page.img}} %} %}
-    {% endif %}
-    <img src="{{img_src}}" class="sf-talk-img img-fluid w-lg-100" 
-      {% if page.img.center %}
-        style="object-position: {{page.img.center}};"
-      {% endif %}
-      alt="Title Image of Talk {{page.title}}" loading="lazy">
-  {% endif %}
-  <!-- TODO: Fix this -->
-  {% if page.imgs %}
-  <div id="carousel-{{include.id}}" class="carousel slide">
-    <div class="carousel-indicators">
+{% if page.img.path %}
+{% assign img_src = page.img.path | relative_url %}
+{% else if page.img.href %}
+{% assign img_src = {{page.img.href}} %}
+{% else %}
+{% assign img_src = {% link {{page.img}} %} %}
+{% endif %}
+<div class="sf-talk-img" style="background-image: url('{{img_src}}');">
+  <img src="{{img_src}}" {% if page.img.center %} style="object-position: {{page.img.center}};" {% endif
+    %} alt="Title Image of Talk {{page.title}}" loading="lazy">
+</div>
+{% endif %}
+{% if page.imgs %}
+<div id="carousel-{{include.id}}" class="carousel slide">
+  <div class="carousel-indicators">
     {% for img in page.imgs %}
-      <button type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide-to="{{forloop.index0}}" 
-        {% if forloop.first %}
-          class="active" aria-current="true" 
-        {% endif %}
-        aria-label="Image {{forloop.index}}"></button>
+    <button type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide-to="{{forloop.index0}}" {% if
+      forloop.first %} class="active" aria-current="true" {% endif %} aria-label="Image {{forloop.index}}"></button>
     {% endfor %}
-    </div>
-    <div class="carousel-inner">
-    {% for img in page.imgs %}
-      {% if img.path %}
-        {% assign img_src = img.path | relative_url %}
-      {% else if page.img.href %}
-        {% assign img_src = {{img.href}} %}
-      {% else %}
-        {% assign img_src = {% link {{img}} %} %}
-      {% endif %}
-      <div class="carousel-item active">
-      <img src="{{img_src}}" class="sf-talk-img img-fluid w-lg-100" 
-        {% if img.center %}
-          style="object-position: {{img.center}};"
-        {% endif %}
-        alt="Title Image of Talk {{page.title}}" loading="lazy">
-      </div>
-    {% endfor %}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
-  {% endif %}
+  <div class="carousel-inner">
+    {% for img in page.imgs %}
+    {% if img.path %}
+    {% assign img_src = img.path | relative_url %}
+    {% else if page.img.href %}
+    {% assign img_src = {{img.href}} %}
+    {% else %}
+    {% assign img_src = {% link {{img}} %} %}
+    {% endif %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <div class="sf-talk-img" style="background-image: url('{{img_src}}');">
+        <img src="{{img_src}}" {% if page.img.center %} style="object-position: {{page.img.center}};" {%
+          endif %} alt="Title Image of Talk {{page.title}}" loading="lazy">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+{% endif %}

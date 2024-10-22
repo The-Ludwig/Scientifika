@@ -5,47 +5,42 @@
     </a>
   </div>
   {% if include.talk.img %}
-    {% if include.talk.img.path %}
-      {% assign img_src = include.talk.img.path | relative_url %}
-    {% else if include.talk.img.href %}
-      {% assign img_src = {{include.talk.img.href}} %}
-    {% else %}
-      {% assign img_src = {% link {{include.talk.img}} %} %}
-    {% endif %}
-    <img src="{{img_src}}" class="sf-talk-card-img" 
-      {% if include.talk.img.center %}
-        style="object-position: {{include.talk.img.center}};"
-      {% endif %}
-      alt="Title Image of Talk {{include.talk.title}}" loading="lazy">
+  {% if include.talk.img.path %}
+  {% assign img_src = include.talk.img.path | relative_url %}
+  {% else if include.talk.img.href %}
+  {% assign img_src = {{include.talk.img.href}} %}
+  {% else %}
+  {% assign img_src = {% link {{include.talk.img}} %} %}
+  {% endif %}
+  <div class="sf-talk-card-img" style="background-image: url('{{img_src}}');">
+    <img src="{{img_src}}" {% if include.talk.img.center %} style="object-position: {{include.talk.img.center}};" {%
+      endif %} alt="Title Image of Talk {{include.talk.title}}" loading="lazy">
+  </div>
   {% endif %}
   {% if include.talk.imgs %}
   <div id="carousel-{{include.id}}" class="carousel slide">
     <div class="carousel-indicators">
-    {% for img in include.talk.imgs %}
-      <button type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide-to="{{forloop.index0}}" 
-        {% if forloop.first %}
-          class="active" aria-current="true" 
-        {% endif %}
-        aria-label="Image {{forloop.index}}"></button>
-    {% endfor %}
+      {% for img in include.talk.imgs %}
+      <button type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide-to="{{forloop.index0}}" {% if
+        forloop.first %} class="active" aria-current="true" {% endif %} aria-label="Image {{forloop.index}}"></button>
+      {% endfor %}
     </div>
     <div class="carousel-inner">
-    {% for img in include.talk.imgs %}
+      {% for img in include.talk.imgs %}
       {% if img.path %}
-        {% assign img_src = img.path | relative_url %}
+      {% assign img_src = img.path | relative_url %}
       {% else if include.talk.img.href %}
-        {% assign img_src = {{img.href}} %}
+      {% assign img_src = {{img.href}} %}
       {% else %}
-        {% assign img_src = {% link {{img}} %} %}
+      {% assign img_src = {% link {{img}} %} %}
       {% endif %}
       <div class="carousel-item {% if forloop.first %}active{% endif %}">
-      <img src="{{img_src}}" class="sf-talk-card-img" 
-        {% if img.center %}
-          style="object-position: {{img.center}};"
-        {% endif %}
-        loading="lazy" >
+        <div class="sf-talk-card-img" style="background-image: url('{{img_src}}');">
+          <img src="{{img_src}}" {% if include.talk.img.center %} style="object-position: {{include.talk.img.center}};"
+            {% endif %} alt="Title Image of Talk {{include.talk.title}}" loading="lazy">
+        </div>
       </div>
-    {% endfor %}
+      {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{include.id}}" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
