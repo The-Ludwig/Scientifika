@@ -32,3 +32,5 @@ gem "json", "~> 2.7"
 gem "html-proofer"
 gem "bootstrap", "~> 5.3"
 gem "popper_js", "~> 2.11"
+
+gem "erb", "~> 4.0"
