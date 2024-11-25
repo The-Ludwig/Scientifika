@@ -69,7 +69,12 @@
           </div>
         </div>
       </button>
-      <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }} • {% if include.talk.link %}<a
+      <span class="col-auto">
+        {{ include.talk.date | date: "%Y-%m-%d" }} 
+        {% if include.talk.opento %}<span class="opento">✨ Open to {{include.talk.opento}}* ✨</span>{% endif %}
+        • 
+        {% if include.talk.link %}
+        <a
           href="{{include.talk.link}}" target="_blank">{% endif %}{{ include.talk.speaker }} {% if include.talk.link
           %}</a>{% endif %}</span>
     </div>
@@ -83,6 +88,16 @@
     </div>
     <div class="mt-3 {% unless include.initcollapsed %}show{% endunless %} collapse" id="abstract-{{include.id}}">
       {{include.talk.content}}
+      {% if include.talk.opento %}
+        <div class="opento-expl">
+        {% if include.talk.opento == 'everyone' %}
+          *Everyone includes students (undergraduate, master's, and PhD), postdocs, senior researchers, faculty, and staff members.
+        {% endif %}
+        {% if include.talk.opento == 'juniors' %}
+          *Junior audience is a term that encompasses undergraduate, master's, and PhD students, as well as postdocs.
+        {% endif %}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
