@@ -1,15 +1,10 @@
 ---
 layout: default
-title:  "🎄🎅🎄 Scientifika Christmas event next week 🎄🎅🎄"
-date:   2024-12-02
+title:  "🎄🎅🎄 Scientifika Christmas Event This Week 🎄🎅🎄"
+date:   2024-12-13
 categories: announcement
 ---
-This week there is **NO**
-<span class="col sf-logo fw-bold display-6">
-  <span class="text-primary" style="margin-right: -0.2em;">Scienti</span>
-  <span class="text-secondary">Fika</span>
-</span>, due to overlap with another event.
-Nevertheless, to finish the term, it is our pleasure to invite you all to our special Christmas themed ScientiFika on Friday 13th December, where we will be moving from Nordita to the Restaurant Proviant in Albano Hus 2.
+To finish the term, it is our pleasure to invite you all to our special Christmas themed ScientiFika on Friday 13th December, where we will be moving from Nordita to the Restaurant Proviant in Albano Hus 2.
 
 **When**: Friday, December 13th, 16:30
 
