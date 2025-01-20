@@ -18,6 +18,17 @@ navname: "Home"
                     is the place to be every Friday afternoon if you want to learn more about a variety of research fields while enjoying delicious Fika! We bring together researchers across different universities in Stockholm to share their passion for science and related topics, while nourishing a deep sense of community among junior researchers.
                 </div>
             </div>
+            {% if site.categories.announcement %}
+            <div class="row" id="sf-announcements">
+                <h2>Announcements</h2>
+                {% assign announcements_by_date = site.categories.announcement | sort: "date" | reverse %}
+                {% for post in announcements_by_date %}
+                <div class="" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
+                {% include announcement.html talk=post id=forloop.index0%}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
             <div id="sf-upcoming-section">
                 <h2>Upcoming</h2>
                 <h4>Friday 16:00 @ Nordita 6th floor</h4>
@@ -35,21 +46,12 @@ navname: "Home"
                     {% endfor %}
                 </div>
             </div>
-            {% if site.categories.announcement %}
-            <div class="row" id="sf-announcements">
-                {% assign announcements_by_date = site.categories.announcement | sort: "date" | reverse %}
-                {% for post in announcements_by_date %}
-                <div class="" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-                {% include announcement.html talk=post id=forloop.index0%}
-                </div>
-                {% endfor %}
-            </div>
-            {% endif %}
         </div>
         <div class="col-lg-3 d-lg-flex mb-4 justify-content-start flex-column">
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing">Join the Mailing List</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdvz9m5FOU57K3mNYNjH04mTR2UGB1KAubC5khwf6u6_u0NUg/viewform?usp=sf_link">Give a Talk!</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScB_JMoqayw-absw3h_QmKlvyxnLHYckkmsoyeT4fbrG1NThg/viewform?usp=sf_link">Attendance Form</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing">📋  Join the Mailing List</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdvz9m5FOU57K3mNYNjH04mTR2UGB1KAubC5khwf6u6_u0NUg/viewform?usp=sf_link">🧑‍🏫 Give a Talk!</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScB_JMoqayw-absw3h_QmKlvyxnLHYckkmsoyeT4fbrG1NThg/viewform?usp=sf_link">📊 Attendance Form</a>
+            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://forms.gle/364xQjgWiZyDYAzA8"> 📬 Suggestion Box</a>
         </div>
     </div>
 </div>
