@@ -1,8 +1,12 @@
 ---
 layout: default
-title:  "🎄🎅🎄 Scientifika Christmas Event This Week 🎄🎅🎄"
+title:  "🎄🎅🎄 Scientifika Christmas Event 🎄🎅🎄"
 date:   2024-12-13
-categories: none
+categories: talk
+imgs:
+  - path: assets/images/talks/2024-12-13/1.png
+  - path: assets/images/talks/2024-12-13/2.png
+  - path: assets/images/talks/2024-12-13/3.png
 ---
 To finish the term, it is our pleasure to invite you all to our special Christmas themed ScientiFika on Friday 13th December, where we will be moving from Nordita to the Restaurant Proviant in Albano Hus 2.
 
