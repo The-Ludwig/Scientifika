@@ -89,6 +89,7 @@
     <div class="mt-3 {% unless include.initcollapsed %}show{% endunless %} collapse" id="abstract-{{include.id}}">
       {{include.talk.content}}
       {% if include.talk.opento %}
+        <hr>
         <div class="opento-expl">
         {% if include.talk.opento == 'everyone' %}
           *Everyone includes students (undergraduate, master's, and PhD), postdocs, senior researchers, faculty, and staff members.
