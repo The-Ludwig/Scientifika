@@ -1,7 +1,7 @@
 ---
 layout: talk
 title: "Strolling in the deep ft. Sea Slugs"
-speaker:  "Antoine Gilles--Lordet"
+speaker:  "Antoine Gilles‐Lordet"
 date:   2025-02-14
 categories: talk
 opento: "juniors"
