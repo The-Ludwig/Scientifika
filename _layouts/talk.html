@@ -27,9 +27,9 @@ layout: default
 {% if page.img.path %}
 {% assign img_src = page.img.path | relative_url %}
 {% else if page.img.href %}
-{% assign img_src = {{page.img.href}} %}
+{% assign img_src = page.img.href %}
 {% else %}
-{% assign img_src = {% link {{page.img}} %} %}
+{% capture img_src %}{% link page.img  %}{% endcapture %}
 {% endif %}
 <div class="sf-talk-img" style="background-image: url('{{img_src}}');">
   <img src="{{img_src}}" {% if page.img.center %} style="object-position: {{page.img.center}};" {% endif
@@ -49,9 +49,9 @@ layout: default
     {% if img.path %}
     {% assign img_src = img.path | relative_url %}
     {% else if page.img.href %}
-    {% assign img_src = {{img.href}} %}
+    {% assign img_src = img.href %}
     {% else %}
-    {% assign img_src = {% link {{img}} %} %}
+    {% capture img_src %}{% link img %}{% endcapture %}
     {% endif %}
     <div class="carousel-item {% if forloop.first %}active{% endif %}">
       <div class="sf-talk-img" style="background-image: url('{{img_src}}');">

@@ -2,6 +2,7 @@
 --- 
 @charset "utf-8";
 @use 'sass:color';
+@use "bootstrap" as *;
 
 // import fonts
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
@@ -35,8 +36,6 @@ $black: color.change($dark, $whiteness: 0%);
 $font-family-base: "Poppins", sans-serif;
 
 $font-size-base: 1.2rem;
-
-@import "bootstrap";
 
 .thick-strikethrough {
   position: relative;
