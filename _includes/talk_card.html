@@ -71,8 +71,10 @@
       </button>
       <span class="col-auto">
         {{ include.talk.date | date: "%Y-%m-%d" }} 
-        {% if include.talk.opento %}<span class="opento">✨ Open to {{include.talk.opento}}* ✨</span>{% endif %}
+        {% if include.talk.opento %}<span class="opento">✨ Open to {{include.talk.opento}}* ✨</span>
+        {% else %}
         • 
+        {% endif %}
         {% if include.talk.link %}
         <a
           href="{{include.talk.link}}" target="_blank">{% endif %}{{ include.talk.speaker }} {% if include.talk.link
