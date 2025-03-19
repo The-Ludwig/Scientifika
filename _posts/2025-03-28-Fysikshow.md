@@ -1,6 +1,6 @@
 ---
 layout: talk
-title: "FysikShow - Our favourite experiments"
+title: "⚡ FysikShow - Our favourite experiments ⚡"
 speaker:  "Ludvig & Alessandro & Ludwig"
 date:   2025-03-28
 categories: talk
