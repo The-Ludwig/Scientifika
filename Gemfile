@@ -30,7 +30,7 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "json", "~> 2.7"
 gem "html-proofer"
-gem "bootstrap", "~> 5.3.3"
+gem "bootstrap", "~> 5.3.5"
 gem "popper_js", "~> 2.11"
 
 gem "erb", "~> 4.0"

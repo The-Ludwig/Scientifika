@@ -11,11 +11,8 @@ GEM
       io-event (~> 1.7)
       metrics (~> 0.12)
       traces (~> 0.15)
-    autoprefixer-rails (10.4.19.0)
-      execjs (~> 2)
     bigdecimal (3.1.9)
-    bootstrap (5.3.3)
-      autoprefixer-rails (>= 9.1.0)
+    bootstrap (5.3.5)
       popper_js (>= 2.11.8, < 3)
     cgi (0.4.1)
     colorator (1.1.0)
@@ -32,7 +29,6 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
-    execjs (2.10.0)
     ffi (1.17.1)
     ffi (1.17.1-x86_64-linux-gnu)
     fiber-annotation (0.2.0)
@@ -143,7 +139,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bootstrap (~> 5.3.3)
+  bootstrap (~> 5.3.5)
   erb (~> 4.0)
   html-proofer
   http_parser.rb (~> 0.6.0)
