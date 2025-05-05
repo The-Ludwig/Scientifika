@@ -3,40 +3,42 @@
 @charset "utf-8";
 @use 'sass:color';
 
-// import fonts
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$dark: #210002;
 
+@use "bootstrap" as bs with (
 // needed for some fine-tuning (related to icons)
-$enable-negative-margins: true;
-
+$enable-negative-margins: true,
 // use color palette
 // orange color palette is really hard
 // copied some colors off
 // https://www.firewatchgame.com/
-$dark: #210002;
-$primary: #5c1715;
-$secondary: #e0711d;
+$primary: #5c1715,
+$secondary: #e0711d,
 // $light: color.scale(#ffb57d, $whiteness: 20%);
 // $body-bg: color.scale(#ffaf00, $whiteness: 80%);
-$light: color.scale(#ffbb69, $whiteness: 20%);
-$body-bg: color.scale(#ffbb69, $whiteness: 50%);
-$white: color.change($dark, $whiteness: 100%);
-$gray-100: color.change($dark, $whiteness: 90%);
-$gray-200: color.change($dark, $whiteness: 80%);
-$gray-300: color.change($dark, $whiteness: 70%);
-$gray-400: color.change($dark, $whiteness: 60%);
-$gray-500: color.change($dark, $whiteness: 50%);
-$gray-600: color.change($dark, $whiteness: 40%);
-$gray-700: color.change($dark, $whiteness: 30%);
-$gray-800: color.change($dark, $whiteness: 20%);
-$gray-900: color.change($dark, $whiteness: 10%);
-$black: color.change($dark, $whiteness: 0%);
-$font-family-base: "Poppins", sans-serif;
+$dark: $dark,
+// This is a bit hacky: it supresses the warning for contrast ratios on colors.
+$min-contrast-ratio: 3,
+$light: color.scale(#ffbb69, $whiteness: 20%),
+$body-bg: color.scale(#ffbb69, $whiteness: 50%),
+$white: color.change($dark, $whiteness: 100%),
+$gray-100: color.change($dark, $whiteness: 90%),
+$gray-200: color.change($dark, $whiteness: 80%),
+$gray-300: color.change($dark, $whiteness: 70%),
+$gray-400: color.change($dark, $whiteness: 60%),
+$gray-500: color.change($dark, $whiteness: 50%),
+$gray-600: color.change($dark, $whiteness: 40%),
+$gray-700: color.change($dark, $whiteness: 30%),
+$gray-800: color.change($dark, $whiteness: 20%),
+$gray-900: color.change($dark, $whiteness: 10%),
+$black: color.change($dark, $whiteness: 0%),
+$font-family-base: ("Poppins", sans-serif),
+$font-size-base: 1.2rem,
+);
 
-@import "bootstrap";
-
-$font-size-base: 1.2rem;
+// import fonts
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .thick-strikethrough {
   position: relative;
@@ -213,7 +215,7 @@ $font-size-base: 1.2rem;
   border-radius: 5px;
   height: 5px;
   width: 1.25em;
-  background-color: $gray-500;
+  background-color: bs.$gray-500;
   position: absolute;
   vertical-align: middle;
   transition: all .5s ease-in-out;
@@ -252,7 +254,7 @@ $font-size-base: 1.2rem;
   border-radius: 5px;
   height: 5px;
   width: 1em;
-  background-color: $primary;
+  background-color: bs.$primary;
   position: absolute;
   vertical-align: middle;
   transition: all .5s ease-in-out;
@@ -265,10 +267,10 @@ $font-size-base: 1.2rem;
 
 .sf-logo {
   font-family: "Dancing Script";
-  @include rfs(5rem, height);
+  @include bs.rfs(5rem, height);
 
-  @include media-breakpoint-down(lg) {
-    @include rfs(6rem);
+  @include bs.media-breakpoint-down(lg) {
+    @include bs.rfs(6rem);
   }
 }
 
@@ -278,10 +280,10 @@ $font-size-base: 1.2rem;
 
 .sf-logo-image {
   transition: all .2s ease-in-out;
-  @include rfs(5rem, height);
+  @include bs.rfs(5rem, height);
 
-  @include media-breakpoint-down(lg) {
-    @include rfs(6rem, height);
+  @include bs.media-breakpoint-down(lg) {
+    @include bs.rfs(6rem, height);
   }
 }
 
@@ -290,7 +292,7 @@ $font-size-base: 1.2rem;
 }
 
 .text-gray {
-  color: $gray-600;
+  color: bs.$gray-600;
 }
 
 .bg-light-hover:hover {
@@ -307,28 +309,28 @@ $font-size-base: 1.2rem;
 }
 
 // apply rounded corners at breakpoint in navbar correctly
-@each $name, $value in $grid-breakpoints {
-  @include media-breakpoint-up(#{$name}) {
+@each $name, $value in bs.$grid-breakpoints {
+  @include bs.media-breakpoint-up(#{$name}) {
     .rounded-first-#{$name} {
-      @include border-start-radius($border-radius);
+      @include bs.border-start-radius(bs.$border-radius);
     }
   }
 
-  @include media-breakpoint-down(#{$name}) {
+  @include bs.media-breakpoint-down(#{$name}) {
     .rounded-first-#{$name} {
-      @include border-top-radius($border-radius);
+      @include bs.border-top-radius(bs.$border-radius);
     }
   }
 
-  @include media-breakpoint-up(#{$name}) {
+  @include bs.media-breakpoint-up(#{$name}) {
     .rounded-last-#{$name} {
-      @include border-end-radius($border-radius);
+      @include bs.border-end-radius(bs.$border-radius);
     }
   }
 
-  @include media-breakpoint-down(#{$name}) {
+  @include bs.media-breakpoint-down(#{$name}) {
     .rounded-last-#{$name} {
-      @include border-bottom-radius($border-radius);
+      @include bs.border-bottom-radius(bs.$border-radius);
     }
   }
 
