@@ -20,7 +20,7 @@ Jekyll::Hooks.register :posts, :pre_render do |post|
   # Only proceed if the directory exists
   if Dir.exist?(full_image_dir)
     # Find all .png and .jpg files in the directory
-    image_files = Dir.glob(File.join(full_image_dir, "*.{png,jpg,jpeg}")).sort
+    image_files = Dir.glob(File.join(full_image_dir, "*.{png,jpg,jpeg,PNG,JPG}")).sort
 
     if image_files.any?
       # Convert absolute paths back to relative paths for Jekyll
