@@ -10,3 +10,5 @@ img:
   path: "https://upload.wikimedia.org/wikipedia/en/d/dd/The_Persistence_of_Memory.jpg"
 ---
 Why can we not change the past? Why do things change only towards the future? What is change? And really, what is time? These questions have been haunting us since before the rise of civilization. They have taken the form of different myths, incorporated into religious views, and nowadays are imprinted in the hardest problems of our scientific theories. A better understanding of the nature of time is likely to play a major role in the conceptual development of a theory of Quantum Gravity as well as refining our models of Cosmology, possibly helping us to comprehend what the Big Bang really was. So, take some time off and come wonder together on the nature of time!
+
+Image Credit: [Salvador Dalí, La persistència de la memòria](https://en.wikipedia.org/wiki/File:The_Persistence_of_Memory.jpg)
