@@ -15,6 +15,43 @@ On Friday afternoons, junior researchers in physics and related sciences in Stoc
 
 <div class="row justify-content-center mb-5">
     {% for member in site.data.team %}
+      {% if member.status == "past" %}
+      {% continue %}
+      {% endif %}
+    <div class="col-lg-10">
+        <div class="card mb-3 bg-light">
+          <div class="row g-0 d-flex">
+            <div class="col-lg-3 rounded-first-lg row justify-content-center justify-content-lg-start align-items-lg-center mx-0 p-0">
+                <img src="{{ member.img | relative_url }}" class="m-0 p-0 rounded-first-lg rounded-2 col-auto align-items-center row pe-0" alt="Foto of {{ member.name }}">
+            </div>
+            <div class="col-lg-9">
+              <div class="card-body">
+                  <h5 class="card-title">{{ member.name }}</h5>
+                <p class="card-text ">
+                {{ member.text }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<h2 class="mt-4">Past
+    <span class="col sf-logo fw-bold display-7">
+    <span class="text-primary" style="margin-right: -0.2em;">Scienti</span>
+    <span class="text-secondary">Fika</span>
+    </span>
+    organizers
+</h2>
+These people shaped ScientiFika to what it is today!
+
+<div class="row justify-content-center mb-5">
+    {% for member in site.data.team %}
+      {% unless member.status == "past" %}
+      {% continue %}
+      {% endunless %}
     <div class="col-lg-10">
         <div class="card mb-3 bg-light">
           <div class="row g-0 d-flex">
