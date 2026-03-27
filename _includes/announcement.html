@@ -4,10 +4,7 @@
         loading="lazy">
     {% endif %}
     <div class="card-header">
-        <div class="row justify-content-between">
-            <h3 class="mb-0 col-auto">{{post.title}}</h3>
-            <span class="col-auto">{{ include.talk.date | date: "%Y-%m-%d" }}</span>
-        </div>
+        <h3 class="mb-0">{{include.talk.title}}</h3>
     </div>
     <div class="card-body col-auto">
         {{include.talk.content}}

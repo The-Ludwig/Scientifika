@@ -20,7 +20,6 @@ navname: "Home"
             </div>
             {% if site.categories.announcement %}
             <div class="row" id="sf-announcements">
-                <h2>Announcements</h2>
                 {% assign announcements_by_date = site.categories.announcement | sort: "date" | reverse %}
                 {% for post in announcements_by_date %}
                 <div class="" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
