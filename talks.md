@@ -25,7 +25,8 @@ navname: "Talks"
                   </ul>
                 </li>
               </ul>
-              <div class="d-flex" role="search" id="sf-search-talks">
+              <div class="d-flex align-items-center gap-3" role="search" id="sf-search-talks">
+                <span class="text-muted small text-nowrap" id="sf-talk-count"></span>
                 <div class="input-group me-2">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
                     <button class="btn btn-outline-primary" type="button" id="button-addon2"><i class="bi bi-x"></i></button>

@@ -7,6 +7,14 @@ let talk_cards = talk_container.querySelectorAll(".sf-talk-card");
 
 let talks = Array.from(talk_cards).map((card) => {return {element: card, date: card.dataset.date}});
 
+let count_el = document.getElementById("sf-talk-count");
+function update_count() {
+    let visible = talks.filter(x => x.element.style.display !== "none").length;
+    let total = talks.length;
+    count_el.textContent = visible === total ? `${total} events` : `${visible} of ${total} events`;
+}
+update_count();
+
 button_fp.addEventListener("pointerup", () => { button_pf.classList.remove("bg-light"); button_fp.classList.add("bg-light"); reorder_talks(false);});
 button_pf.addEventListener("pointerup", () => { button_fp.classList.remove("bg-light"); button_pf.classList.add("bg-light"); reorder_talks(true);});
 
@@ -22,13 +30,15 @@ search_input.addEventListener("input", ()=>{
         if( x.element.innerHTML.toLowerCase().includes(search_input.value.toLowerCase()) ){
             x.element.style.display = "";
         }else{
-            x.element.style.display = "None";
+            x.element.style.display = "none";
         }
     });
+    update_count();
 });
 
 let delete_input = searchform.querySelector("button");
 delete_input.addEventListener("pointerup", ()=>{
     search_input.value = "";
     talks.forEach((x)=> x.element.style.display="");
+    update_count();
 });
