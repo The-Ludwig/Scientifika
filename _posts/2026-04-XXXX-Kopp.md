@@ -1,0 +1,15 @@
+---
+layout: talk
+title:  "Deep Meditation - practice, theory & science"
+date:   2026-04-XXX
+categories: talk
+speaker: "Michael Kopp"
+opento: "juniors"
+---
+In this scientifika lecture you'll learn and experience Deep Meditation, and find out about its remarkable long-term benefits and what science has to say about it.
+
+If you're only interested in the theory & science part and don't want to meditate, please arrive 30 min late, and only enter the room after the "Do not disturb"-sign on the door is removed. 
+
+Meditation when practiced regularly (every day over months and years) leads to astounding changes in the subjective experience of every day life, the perception and relationship to one's thoughts, emotions and sense of self. This generally goes along with improved  physical and mental health, well-being, creativity and contentment.
+
+After dropping out of academia I had the opportunity to dive deep into meditation practices, and I will teach you the one practice that I currently consider to be the most effective and time-efficient for gradually increasing one's life quality, and which can be incorporated into a busy life.
