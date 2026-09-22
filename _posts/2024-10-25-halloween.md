@@ -8,6 +8,7 @@ imgs:
   - path: assets/images/talks/2024-10-25.png
   - path: assets/images/talks/2024-10-25-01.png
   - path: assets/images/talks/2024-10-25-02.png
+img_credit: none   # ScientiFika event images, not from the speakers
 ---
 🎃🎃🎃For Halloween, we present not one, not two, but three very scary talks!👻👻👻
 

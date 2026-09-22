@@ -4,6 +4,7 @@ title: "ScientiFikART 🎨🔬"
 date: 2026-03-27
 # categories: announcement
 img: assets/images/scientifikart.png
+img_credit: none   # ScientiFika event poster
 ---
 We're doing something a little different this time — welcome to **ScientiFikART**! 🎨
 

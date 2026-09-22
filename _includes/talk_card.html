@@ -52,6 +52,12 @@
     </button>
   </div>
   {% endif %}
+  {% if include.talk.img or include.talk.imgs %}{% unless include.talk.img_credit == 'none' %}
+  <div class="sf-img-credit px-3 pt-1 text-muted small">
+    {% if include.talk.img_credit %}{{ include.talk.img_credit }}{% elsif include.talk.imgs %}Images
+    provided by the speaker.{% else %}Image provided by the speaker.{% endif %}
+  </div>
+  {% endunless %}{% endif %}
   <div class="card-body text-justify bg-light rounded py-2">
     <div class="row justify-content-between">
       <button class="col-auto {% if include.initcollapsed %}collapsed{% endif %} btn pe-5 py-0" type="button"

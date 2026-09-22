@@ -71,3 +71,9 @@ layout: default
   </button>
 </div>
 {% endif %}
+{% if page.img or page.imgs %}{% unless page.img_credit == 'none' %}
+<div class="sf-img-credit pt-1 text-muted small">
+  {% if page.img_credit %}{{ page.img_credit }}{% elsif page.imgs %}Images provided by the
+  speaker.{% else %}Image provided by the speaker.{% endif %}
+</div>
+{% endunless %}{% endif %}

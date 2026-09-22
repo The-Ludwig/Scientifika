@@ -7,6 +7,7 @@ imgs:
   - path: assets/images/talks/2024-12-13/1.png
   - path: assets/images/talks/2024-12-13/2.png
   - path: assets/images/talks/2024-12-13/3.png
+img_credit: none   # ScientiFika Christmas event, no speaker
 ---
 To finish the term, it is our pleasure to invite you all to our special Christmas themed ScientiFika on Friday 13th December, where we will be moving from Nordita to the Restaurant Proviant in Albano Hus 2.
 
