@@ -148,36 +148,6 @@ function questionTitlesOnly(form) {
   return answers;
 }
 
-/**
- * Bring the repo up to date with every response the form has, including ones
- * submitted before this script existed. Safe to re-run: a response that already
- * has a branch is updated in place, never duplicated.
- *
- * Apps Script stops a run after about six minutes. If that happens, just run it
- * again — it resumes where it left off.
- */
-function processAllResponses() {
-  const responses = FormApp.getActiveForm().getResponses();
-  const counts = { created: 0, updated: 0, unchanged: 0, failed: 0 };
-
-  responses.forEach((response, i) => {
-    const label = i + 1 + '/' + responses.length + ' ';
-    try {
-      const result = processResponse(response);
-      counts[result.action] += 1;
-      Logger.log(label + describe(result));
-    } catch (err) {
-      counts.failed += 1;
-      Logger.log(label + 'FAILED: ' + err.message);
-    }
-  });
-
-  Logger.log(
-    'Done. ' + counts.created + ' opened, ' + counts.updated + ' updated, ' +
-    counts.unchanged + ' already current, ' + counts.failed + ' failed.'
-  );
-}
-
 // ---------------------------------------------------------------------------
 // Core
 // ---------------------------------------------------------------------------
