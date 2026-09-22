@@ -177,8 +177,8 @@ FysikShow — ScientiFika's own events rather than a speaker's material.
 ## Keeping the script and the form in sync
 
 The script finds each field by matching question wording, so editing the form can
-quietly change what it picks up. Two functions keep the two in step — run them from
-the Apps Script editor like `testWithLatestResponse`.
+quietly change what it picks up. Run this from the Apps Script editor, like
+`testWithLatestResponse`.
 
 ### `checkFormMapping()` — run this after every form edit
 
@@ -208,25 +208,6 @@ of agreement with the real behaviour.
 Rewording matters more than it looks. Renaming "Title of your talk" to "What will you
 speak about?" loses the title *and* hijacks the abstract, because "about" matches the
 abstract pattern. The mapping report shows that immediately.
-
-### `processAllResponses()` — catch up on responses
-
-Walks every response the form has ever received, including ones submitted before the
-script was installed, and opens or updates a pull request for each. Idempotent, thanks
-to the hashed branch names: responses already handled are reported as `No change`.
-
-```
-1/3 Opened https://github.com/The-Ludwig/Scientifika/pull/27
-2/3 No change: …/pull/26 already matches this response.
-3/3 Updated …/pull/25 from the edited response.
-Done. 1 opened, 1 updated, 1 already current, 0 failed.
-```
-
-One run stops after about six minutes (an Apps Script limit) and a single failure does
-not abort the rest. Just run it again — it resumes.
-
-⚠️ It opens a pull request per unprocessed response, so if the form has a backlog you
-will get a batch of them at once.
 
 ## Notes
 
