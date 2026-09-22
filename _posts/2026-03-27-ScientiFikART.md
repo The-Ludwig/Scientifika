@@ -2,7 +2,7 @@
 layout: default
 title: "ScientiFikART 🎨🔬"
 date: 2026-03-27
-categories: announcement
+# categories: announcement
 img: assets/images/scientifikart.png
 ---
 We're doing something a little different this time — welcome to **ScientiFikART**! 🎨
