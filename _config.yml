@@ -50,6 +50,7 @@ sass:
 #
 exclude:
     - README.md
+    - tools/
     - .sass-cache/
     - .jekyll-cache/
     - gemfiles/
