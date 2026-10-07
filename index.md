@@ -16,6 +16,7 @@ navname: "Home"
                         <span class="text-secondary">Fika</span>
                     </span>
                     is the place to be every Friday afternoon if you want to learn more about a variety of research fields while enjoying delicious Fika! We bring together researchers across different universities in Stockholm to share their passion for science and related topics, while nourishing a deep sense of community among junior researchers.
+                    <p class="mt-3 mb-0"><a href="{% link about.html %}#slides">A bit about us: discover ScientiFika in 11 slides →</a></p>
                 </div>
             </div>
             {% if site.categories.announcement %}
