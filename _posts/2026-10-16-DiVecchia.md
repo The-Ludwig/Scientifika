@@ -4,7 +4,7 @@ title: "The birth of string theory or how to build a theory without knowing the 
 date: 2026-10-16
 categories: talk
 speaker: "Paolo Di Vecchia"
-opento: "juniors"
+opento: "everyone"
 img:
   path: "assets/images/talks/2026-10-16/01-paolo-di-vecchia.png"
 ---
