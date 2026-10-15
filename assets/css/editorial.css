@@ -754,3 +754,14 @@ main li .talk-tag:hover { background:#f3e6d4; color:#9f4200; text-decoration:non
  .filters input[type='search'] { flex-basis:100%; }
  .tag-filter { padding:8px 10px; }
 }
+
+/* Image credits: a quiet note under talk images and on talk cards. */
+figcaption.img-credit,.talk-image-gallery figcaption.img-credit { font-size:12px; margin-top:6px; color:var(--muted); }
+.poster-card .meta .img-credit { letter-spacing:0; opacity:.75; }
+/* Shrink each credited figure to its image so the caption lines up with the image edge;
+   contain:inline-size stops the caption text from widening the figure. */
+.talk-artwork figure,.talk-image-gallery figure { width:fit-content; min-width:min(100%,9rem); max-width:100%; margin-inline:auto; }
+.talk-artwork figcaption,.talk-image-gallery figcaption { contain:inline-size; }
+.event-logistics .img-credit { font-size:12px; color:var(--muted); }
+/* The image itself is hidden on phones, so its credit goes too. */
+@media(max-width:760px) { .event-logistics .img-credit { display:none; } }

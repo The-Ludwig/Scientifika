@@ -1,0 +1,4 @@
+{%- comment -%}Credit line for a talk's images. Shows img_credit if set, nothing if it is 'none', otherwise the speaker default.{%- endcomment -%}
+{%- unless include.talk.img_credit == 'none' -%}
+  {%- if include.talk.img_credit -%}{{ include.talk.img_credit }}{%- elsif include.short -%}Image by the speaker{%- else -%}Image provided by the speaker.{%- endif -%}
+{%- endunless -%}

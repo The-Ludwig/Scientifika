@@ -7,7 +7,7 @@
       {% unless include.mode == 'home' %}<div class="small-label">Next talk</div>{% endunless %}
       <h2 class="next-title"><a href="{{ talk.url | relative_url }}">{{ talk.title | escape }}</a></h2>
       <p class="speaker">{{ talk.speaker | strip_html | escape }}</p>
-      {% if talk.sf_time %}<p class="event-logistics">{{ talk.sf_time | escape }}{% if talk.sf_venue %}<br>{{ talk.sf_venue | escape }}{% endif %}</p>{% endif %}
+      {% if talk.sf_time %}<p class="event-logistics">{{ talk.sf_time | escape }}{% if talk.sf_images.size > 0 and talk.img_credit != 'none' %}<span class="img-credit"> · {% include img-credit.html talk=talk short=true %}</span>{% endif %}{% if talk.sf_venue %}<br>{{ talk.sf_venue | escape }}{% endif %}</p>{% endif %}
       <p class="event-meta">{% if talk.opento == 'everyone' %}Open to everyone{% elsif talk.opento == 'juniors' %}Students &amp; postdocs{% else %}See event details{% endif %}</p>
       {% unless include.mode == 'home' %}<a class="button" href="{{ talk.url | relative_url }}">Talk details</a>{% endunless %}
     </div>
