@@ -3,7 +3,7 @@ layout: base
 title: Our story
 permalink: /about/
 nav_section: story
-featured_testimonials: [9, 10, 7]
+featured_testimonials: [0, 1, 9]
 description: An interdisciplinary community for junior researchers, built around accessible talks, conversation and fika.
 ---
 <div class="wrap">
@@ -30,33 +30,6 @@ description: An interdisciplinary community for junior researchers, built around
       <div class="pillar"><span class="pillar-number">03</span><div><h3>Across disciplines</h3><p>Learn about research beyond your own discipline.</p></div></div>
       <div class="pillar"><span class="pillar-number">04</span><div><h3>Mentorship &amp; collaboration</h3><p>Get to know people you might work with or ask for advice.</p></div></div>
     </div>
-  </div>
-</section>
-<section class="section wrap feedback-highlights" id="feedback" aria-labelledby="feedback-heading">
-  <div class="split-heading"><h2 id="feedback-heading">Participant feedback</h2><p>Three responses from our 2023 feedback survey.</p></div>
-  <div class="feedback-quotes">
-    {% for quote_index in page.featured_testimonials %}
-    <blockquote><p>“{{ site.data.testimonials[quote_index] | escape }}”</p></blockquote>
-    {% endfor %}
-  </div>
-  <a class="text-link" href="{{ '/testimonials/' | relative_url }}">Read more feedback and the full report</a>
-</section>
-<section class="section wrap">
-  <div class="split-heading"><h2>Questions and discussion</h2><p>You can ask questions during the talk. We give priority to students’ questions.</p></div>
-  <div class="feature">
-    <div>
-      <h3>Who comes to ScientiFika?</h3>
-      <p class="section-paragraph">Our usual audience is bachelor’s, master’s and PhD students, and postdocs. Selected events welcome senior researchers, faculty and staff too.</p>
-      <p class="muted">See each event’s page for its intended audience.</p>
-      <a class="text-link" href="{{ '/join/' | relative_url }}">Who can join?</a>
-    </div>
-    <div class="info-box"><h3>What to expect</h3><p class="section-paragraph">Talks cover research and academic life. They are informal, with questions throughout and fika afterwards.</p></div>
-  </div>
-</section>
-<section class="section wrap ruled-section" id="uppsala">
-  <div class="feature">
-    <figure><img class="uppsala-poster" src="{{ '/assets/editorial/uppsala.jpg' | relative_url }}" width="1429" height="1787" loading="lazy" alt="Original poster for the first ScientiFika Uppsala event, 23 April 2026"></figure>
-    <div><div class="small-label">April 2026</div><h2>ScientiFika<br><span class="serif italic">in Uppsala.</span></h2><p>The first ScientiFika Uppsala event took place on 23 April 2026 with Guilherme Franzmann’s “On the nature of time”.</p><p>Our partners at ÅSCO, Ångström SciComm &amp; Outreach, continued the programme in the autumn.</p><a class="text-link" href="https://www.instagram.com/scientifika.su/p/DdRTGscj0X6/">Uppsala autumn announcement</a></div>
   </div>
 </section>
 <section class="section wrap ruled-section" id="team">
@@ -95,6 +68,33 @@ description: An interdisciplinary community for junior researchers, built around
       <p>A short introduction to ScientiFika’s history, aims, talks and events.</p>
       <div class="slides-actions"><a class="button" href="{{ '/assets/presentations/ScientiFika-introduction.pdf' | relative_url }}">View slides</a><a class="text-link" href="{{ '/assets/presentations/ScientiFika-introduction.pdf' | relative_url }}" download>Download PDF</a></div>
     </div>
+  </div>
+</section>
+<section class="section wrap feedback-highlights" id="feedback" aria-labelledby="feedback-heading">
+  <div class="split-heading"><h2 id="feedback-heading">Participant feedback</h2><p>Three responses from our 2023 feedback survey.</p></div>
+  <div class="feedback-quotes">
+    {% for quote_index in page.featured_testimonials %}
+    <blockquote><p>“{{ site.data.testimonials[quote_index] | escape }}”</p></blockquote>
+    {% endfor %}
+  </div>
+  <a class="text-link" href="{{ '/testimonials/' | relative_url }}">Read more feedback and the full report</a>
+</section>
+<section class="section wrap">
+  <div class="split-heading"><h2>Questions and discussion</h2><p>You can ask questions during the talk. We give priority to students’ questions.</p></div>
+  <div class="feature">
+    <div>
+      <h3>Who comes to ScientiFika?</h3>
+      <p class="section-paragraph">Our usual audience is bachelor’s, master’s and PhD students, and postdocs. Selected events welcome senior researchers, faculty and staff too.</p>
+      <p class="muted">See each event’s page for its intended audience.</p>
+      <a class="text-link" href="{{ '/join/' | relative_url }}">Who can join?</a>
+    </div>
+    <div class="info-box"><h3>What to expect</h3><p class="section-paragraph">Talks cover research and academic life. They are informal, with questions throughout and fika afterwards.</p></div>
+  </div>
+</section>
+<section class="section wrap ruled-section" id="uppsala">
+  <div class="feature">
+    <figure><img class="uppsala-poster" src="{{ '/assets/editorial/uppsala.jpg' | relative_url }}" width="1429" height="1787" loading="lazy" alt="Original poster for the first ScientiFika Uppsala event, 23 April 2026"></figure>
+    <div><div class="small-label">April 2026</div><h2>ScientiFika<br><span class="serif italic">in Uppsala.</span></h2><p>The first ScientiFika Uppsala event took place on 23 April 2026 with Guilherme Franzmann’s “On the nature of time”.</p><p>Our partners at ÅSCO, Ångström SciComm &amp; Outreach, continued the programme in the autumn.</p><a class="text-link" href="https://www.instagram.com/scientifika.su/p/DdRTGscj0X6/">Uppsala autumn announcement</a></div>
   </div>
 </section>
 <section class="section wrap ruled-section">
