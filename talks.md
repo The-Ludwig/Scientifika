@@ -1,47 +1,47 @@
 ---
-layout: default
-title: "Talks"
-navname: "Talks"
+layout: base
+title: "What’s on"
+navname: "What’s on"
 ---
-<div class="container">
-    <div class="row sf-talks justify-content-center">
-        <nav class="navbar navbar-expand-lg rounded sf-searchbar bg-light mb-4" id="sf-searchbar-talks">
-          <div class="container-fluid">
-            <h5 class="navbar-brand mb-0" href="#">Filter</h5>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sf-searchbar" aria-controls="sf-searchbar" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="sf-navbar-toggler-icon-minor sf-navbar-toggler-icon-container">
-                    <div class="bar"></div><div class="bar"></div>
-                </div>
-            </button>
-            <div class="collapse navbar-collapse" id="sf-searchbar">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ordering
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><button class="dropdown-item bg-light" href="#" id="sf-order-fp">Future<i class="bi bi-arrow-right"></i>Past</button></li>
-                    <li><button class="dropdown-item" href="#" id="sf-order-pf">Past<i class="bi bi-arrow-right"></i>Future</button></li>
-                  </ul>
-                </li>
-              </ul>
-              <div class="d-flex align-items-center gap-3" role="search" id="sf-search-talks">
-                <span class="text-muted small text-nowrap" id="sf-talk-count"></span>
-                <div class="input-group me-2">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2"><i class="bi bi-x"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-        {% assign talks_by_date = site.categories.talk | sort: "date" | reverse %}
-        {% for post in talks_by_date %}
-        <div class="col-lg-9 sf-talk-card" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-        {% include talk_card.html talk=post id=forloop.index0 initcollapsed=true %}
-        </div>
-        {% endfor %}
+<div class="wrap">
+  <section class="page-heading">
+    <h1>A new perspective<br>for your Friday.</h1>
+    <p>Explore the programme and the conversations that came before.</p>
+  </section>
+  {% include next-talk.html %}
+  {% if site.sf_upcoming.size > 1 %}
+  <section class="also-coming" aria-label="Also coming up">
+    <h2>Also coming up</h2>
+    {% for talk in site.sf_upcoming offset:1 %}
+    <a class="archive-item" href="{{ talk.url | relative_url }}" data-upcoming-row data-talk-url="{{ talk.url | relative_url }}" data-end="{{ talk.sf_end_epoch }}"><time class="date-small" datetime="{{ talk.sf_date }}">{{ talk.date | date: '%-d %b %Y' }}</time><div><strong>{{ talk.title | escape }}</strong><small>{{ talk.speaker | strip_html | escape }}</small></div><span>{% if talk.opento == 'everyone' %}Open to everyone{% elsif talk.opento == 'juniors' %}Students &amp; postdocs{% else %}See event details{% endif %}</span></a>
+    {% endfor %}
+  </section>
+  {% endif %}
+  <section class="archive" id="archive" data-talk-archive>
+    <div class="archive-head">
+      <h2>From the archive</h2>
+      <form class="filters" role="search" aria-label="Filter past talks" data-archive-filters hidden>
+        <label class="sr-only" for="talk-search">Search talks or speakers</label>
+        <input id="talk-search" name="q" placeholder="Search talks or speakers" type="search" autocomplete="off">
+        <label class="sr-only" for="talk-year">Filter by year</label>
+        <select id="talk-year" name="year"><option value="all">All years</option>{% for year in site.sf_years %}<option>{{ year }}</option>{% endfor %}</select>
+        <button type="reset" class="filter-reset">Reset</button>
+      </form>
     </div>
+    <p class="archive-status" data-result-count role="status" aria-live="polite" aria-atomic="true">{{ site.sf_past.size }} past talks</p>
+    <div class="gallery">
+      {% for talk in site.sf_featured_talks %}{% include talk_card.html talk=talk %}{% endfor %}
+    </div>
+    <div class="archive-list">
+      {% for talk in site.sf_talks %}{% unless talk.sf_archive_featured %}
+      <a class="archive-item" href="{{ talk.url | relative_url }}" data-archive-entry data-end="{{ talk.sf_end_epoch }}" data-year="{{ talk.sf_year }}" data-search="{{ talk.title | append: ' ' | append: talk.speaker | strip_html | escape }}" {% if talk.sf_is_upcoming %}hidden{% endif %}>
+        <time class="date-small" datetime="{{ talk.sf_date }}">{{ talk.date | date: '%-d %b %Y' }}</time>
+        <div><strong>{{ talk.title | escape }}</strong><small>{{ talk.speaker | strip_html | escape }}</small></div>
+      </a>
+      {% endunless %}{% endfor %}
+    </div>
+    <p class="empty" data-archive-empty hidden>No talks match these filters. Try another name or choose all years.</p>
+    <a class="text-link archive-return" href="#archive">Back to archive filters</a>
+    <p class="archive-note">Original artwork retains the wording and dates of its announcement.</p>
+  </section>
 </div>
-
-<script defer src="{{site.baseurl}}/assets/js/filter.js"></script>

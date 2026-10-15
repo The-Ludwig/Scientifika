@@ -1,0 +1,16 @@
+<div class="poster-wall" aria-label="The three latest announced talks">
+  {% for talk in site.sf_talks limit:3 %}
+    {% assign poster = talk.poster | default: site.data.poster_art[talk.sf_date] %}
+    <a class="poster-link{% unless poster %} poster-summary{% endunless %}" href="{{ talk.url | relative_url }}" aria-label="{{ talk.title | escape }} — {{ talk.speaker | escape }}, {{ talk.date | date: '%-d %B %Y' }}">
+      {% if poster %}
+        {% include talk-image.html talk=talk image=poster loading='eager' %}
+      {% else %}
+        <span class="poster-date">{{ talk.date | date: '%-d %b %Y' }}</span>
+        <strong>{{ talk.title | escape }}</strong>
+        {% include talk-image.html talk=talk loading='eager' %}
+        <span class="poster-speaker">{{ talk.speaker | escape }}</span>
+      {% endif %}
+    </a>
+  {% endfor %}
+  <span class="poster-note">A little outside your field.</span>
+</div>

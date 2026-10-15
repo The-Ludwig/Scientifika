@@ -1,0 +1,10 @@
+# Existing social artwork keyed by event date. New talks automatically fall back
+# to their own images; an optional poster: { path: ... } field takes precedence.
+"2026-10-16":
+  path: /assets/editorial/paolo.png
+"2026-10-09":
+  path: /assets/editorial/gui.png
+"2026-10-02":
+  path: /assets/editorial/dennis.png
+"2026-09-25":
+  path: /assets/editorial/nikki.png

@@ -1,54 +1,11 @@
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid p-0 d-flex flex-column align-items-start">
-        <div class="row justify-content-between flex-nowrap w-100 navbar-brand me-0">
-            <a class="col-auto row g-0 sf-logo-header" href="{% link index.md %}">
-                {% include cup.html class="col img-fluid-vertical align-middle sf-logo-image mx-3 pt-3" %}
-                <h1 class="col sf-logo fw-bold display-1">
-                    <span class="text-primary" style="margin-right: -0.2em;">Scienti</span>
-                    <span class="text-secondary">Fika</span>
-                </h1>
-            </a>
-            <button class="col-auto navbar-toggler collapsed border-0 shadow-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarBar" aria-controls="navbarBar" aria-expanded="true"
-                aria-label="Toggle navigation">
-                <div class="sf-navbar-toggler-icon">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </button>
-        </div>
-        <div class="collapse sf-navbar-collapse navbar-collapse w-100" id="navbarBar">
-            <ul class="navbar-nav bg-dark w-100 bg-dark rounded-2 fs-4 p-0">
-                {% for navpagelink in site.data.navpages %}
-                {% assign navpage = site.pages | where: "name", navpagelink | first %}
-                <li class="nav-item rounded-start-1">
-                    <a href="{% link {{navpagelink}} %}"
-                        class="nav-link p-2 px-4 text-secondary bg-primary-hover text-decoration-none {% if navpage.name == page.name %}bg-primary{% endif %} {% if forloop.first %}rounded-first-lg{% endif %} {% if forloop.last %}rounded-last-lg{% endif %}"
-                        {% if navpage.name==page.nam %}aria-current="page" {% endif %}>
-                        {{ navpage.title }}
-                    </a>
-                </li>
-                {% endfor %}
-                <li class="nav-item ms-lg-auto">
-                    <a href="https://www.instagram.com/scientifika.su/" target="_blank"
-                        class="d-flex nav-link px-3 text-secondary bg-primary-hover text-decoration-none">
-                        <div class="d-lg-none">Instagram</div>
-                        <div class="ps-4 ps-lg-0 pb-1 mb-n1">
-                            <i class="bi bi-instagram"></i>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="mailto:scientifika@fysik.su.se" target="_blank"
-                        class="d-flex nav-link px-3 text-secondary bg-primary-hover text-decoration-none rounded-last-lg">
-                        <div class="d-lg-none">Contac us by E-Mail</div>
-                        <div class="ps-4 ps-lg-0 pb-1 mb-n1">
-                            <i class="bi bi-envelope-at"></i>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<header class="header wrap">
+  {% include brand.html %}
+  <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+  <nav class="nav" id="navigation" aria-label="Main navigation">
+    <a href="{{ '/talks/' | relative_url }}" {% if page.url == '/talks/' or page.layout == 'talk' %}aria-current="page"{% endif %}>What’s on</a>
+    <a href="{{ '/events/' | relative_url }}" {% if page.url contains '/events/' %}aria-current="page"{% endif %}>Beyond the talks</a>
+    <a href="{{ '/about/' | relative_url }}" {% if page.nav_section == 'story' %}aria-current="page"{% endif %}>Our story</a>
+    <a class="mobile-join" href="{{ '/join/' | relative_url }}" {% if page.nav_section == 'join' %}aria-current="page"{% endif %}>Join us</a>
+  </nav>
+  <a class="button outline" href="{{ '/join/' | relative_url }}" {% if page.nav_section == 'join' %}aria-current="page"{% endif %}>Join us</a>
+</header>

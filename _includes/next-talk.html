@@ -1,0 +1,23 @@
+<div class="next-talks" data-next-talk>
+  {% for talk in site.sf_upcoming %}
+  <article class="next-event {% if talk.sf_images.size == 0 %}next-no-art {% endif %}{% if include.mode == 'home' %}event-row{% else %}programme-next{% endif %}" data-next-candidate data-talk-url="{{ talk.url | relative_url }}" data-end="{{ talk.sf_end_epoch }}" {% unless forloop.first %}hidden{% endunless %}>
+    <time class="date" datetime="{{ talk.sf_date }}"><b>{{ talk.date | date: '%d' }}</b><span>{{ talk.date | date: '%b' }}<br>{{ talk.date | date: '%Y' }}</span></time>
+    {% if talk.sf_images.size > 0 %}<a class="next-art" href="{{ talk.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include talk-image.html talk=talk loading='eager' %}</a>{% endif %}
+    <div class="next-info">
+      {% unless include.mode == 'home' %}<div class="small-label">Next talk</div>{% endunless %}
+      <h2 class="next-title"><a href="{{ talk.url | relative_url }}">{{ talk.title | escape }}</a></h2>
+      <p class="speaker">{{ talk.speaker | strip_html | escape }}</p>
+      {% if talk.sf_time %}<p class="event-logistics">{{ talk.sf_time | escape }}{% if talk.sf_venue %}<br>{{ talk.sf_venue | escape }}{% endif %}</p>{% endif %}
+      <p class="event-meta">{% if talk.opento == 'everyone' %}Open to everyone{% elsif talk.opento == 'juniors' %}Students &amp; postdocs{% else %}See event details{% endif %}</p>
+      {% unless include.mode == 'home' %}<a class="button" href="{{ talk.url | relative_url }}">Talk details</a>{% endunless %}
+    </div>
+    {% if include.mode == 'home' %}<div class="next-actions"><a class="button" href="{{ talk.url | relative_url }}">Talk details</a></div>{% endif %}
+  </article>
+  {% endfor %}
+  <div class="next-empty" data-next-empty {% if site.sf_upcoming.size > 0 %}hidden{% endif %}>
+    <h2>The next gathering is on its way.</h2>
+    <p>Join the mailing list for the next announcement, or explore our previous talks.</p>
+    <a class="button" href="{{ '/join/' | relative_url }}">Stay in the loop</a>
+    <a class="text-link" href="{{ '/talks/#archive' | relative_url }}">Explore the archive</a>
+  </div>
+</div>
