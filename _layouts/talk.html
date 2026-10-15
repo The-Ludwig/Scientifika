@@ -8,6 +8,7 @@ layout: base
       <div class="small-label">{% if page.sf_is_upcoming %}Upcoming talk{% else %}Past event{% endif %} · <time datetime="{{ page.sf_date }}">{{ page.date | date: '%-d %B %Y' }}</time></div>
       <h1>{{ page.title | escape }}</h1>
       <div class="speaker">{% if page.sf_speaker_link %}<a href="{{ page.sf_speaker_link | escape }}" target="_blank" rel="noopener">{{ page.speaker }}</a>{% else %}{{ page.speaker }}{% endif %}</div>
+      {% include talk-tags.html talk=page %}
       <div class="detail-facts">
         <div><strong>When</strong><span>{{ page.date | date: '%A %-d %B %Y' }}{% if page.sf_time %}<br>{{ page.sf_time | escape }} · Stockholm time{% endif %}</span></div>
         {% if page.sf_venue %}<div><strong>Where</strong><span>{{ page.sf_venue | escape }}</span></div>{% endif %}
@@ -17,7 +18,7 @@ layout: base
     </div>
     <div class="talk-body">
       {% if page.sf_details.introduction %}<div class="talk-introduction"><h2>In brief</h2><p>{{ page.sf_details.introduction | escape }}</p></div>{% endif %}
-      <h2 class="abstract-label">{% if page.sf_details.abstract_unavailable %}About the talk{% else %}Original talk abstract{% endif %}</h2>
+      <h2 class="abstract-label">Abstract</h2>
       <div class="talk-abstract">{% if page.sf_details.abstract_unavailable %}<p>The abstract for this archived talk is currently unavailable.</p>{% else %}{{ content }}{% endif %}</div>
       {% if page.presentation %}{% assign presentation = page.presentation | prepend: '/assets/presentations/' %}<a class="button outline" href="{{ presentation | relative_url }}" target="_blank" rel="noopener">View the presentation</a>{% endif %}
       {% if page.sf_speaker_link %}<a class="text-link" href="{{ page.sf_speaker_link | escape }}" target="_blank" rel="noopener">About the speaker</a>{% endif %}

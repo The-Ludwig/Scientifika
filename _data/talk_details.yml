@@ -1,9 +1,11 @@
 # Editorial metadata and safeguards; original archived posts remain unchanged.
-# Paolo logistics and summary: local 2026-10-16 website brief and published social artwork.
+# Paolo logistics: local 2026-10-16 website brief and published social artwork.
+# Short description: user wording; introduction follows the speaker's abstract.
 "/talk/2026/10/16/DiVecchia/":
   time: "16:00–17:00"
   venue: "Nordita, 6th floor · fika area"
-  introduction: "How can a theory take shape before its underlying equations are known? Paolo follows the path from particle scattering to string theory, and the unexpected connection between gauge theories and gravity."
+  short_description: "On the origins of string theory."
+  introduction: "Paolo Di Vecchia traces how string theory emerged from particle scattering amplitudes, before its Lagrangian was known."
   image_alts:
     - "Portrait of Paolo Di Vecchia"
 # The Fattahi body exactly duplicates Lemon's 3 October 2025 abstract.
