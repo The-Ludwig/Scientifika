@@ -38,7 +38,8 @@ navname: "What’s on"
         </details>
       </form>
     </div>
-    <p class="archive-status" data-result-count role="status" aria-live="polite" aria-atomic="true">{{ site.sf_past.size }} past talks</p>
+    <p class="archive-status" data-result-count role="status" aria-live="polite" aria-atomic="true" tabindex="-1">{{ site.sf_past.size }} past talks</p>
+    {% include archive-pagination.html position='top' %}
     <div class="gallery">
       {% for talk in site.sf_featured_talks %}{% include talk_card.html talk=talk %}{% endfor %}
     </div>
@@ -51,6 +52,7 @@ navname: "What’s on"
       {% endunless %}{% endfor %}
     </div>
     <p class="empty" data-archive-empty hidden>No talks match these filters. Try fewer topics, another search or all years.</p>
+    {% include archive-pagination.html position='bottom' %}
     <a class="text-link archive-return" href="#archive">Back to archive filters</a>
     <p class="archive-note">Original artwork retains the wording and dates of its announcement.</p>
   </section>

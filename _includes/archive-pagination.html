@@ -1,0 +1,9 @@
+<nav class="archive-pagination" aria-label="Archive pages" data-archive-pagination hidden>
+  <button type="button" data-page-step="-1">Previous</button>
+  <div class="archive-page-select">
+    <label for="archive-page-{{ include.position }}">Page</label>
+    <select id="archive-page-{{ include.position }}" data-archive-page><option value="1">1</option></select>
+    <span data-page-total>of 1</span>
+  </div>
+  <button type="button" data-page-step="1">Next</button>
+</nav>

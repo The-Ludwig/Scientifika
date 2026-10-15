@@ -20,7 +20,7 @@ JEKYLL_ENV=production bundle exec jekyll build
 ## Content and templates
 
 - `index.md`: newcomer homepage. The collage automatically selects the three newest dated talk posts, including upcoming talks; the next-talk section is also generated from the posts.
-- `talks.md`: current programme and archive searchable by title, speaker or tags, with year and topic filters. Existing talk URLs are preserved.
+- `talks.md`: current programme and archive searchable by title, speaker or tags, with year and topic filters and ten talks per page. Existing talk URLs are preserved.
 - `_layouts/talk.html`: complete abstract, speaker, audience, artwork and presentation links.
 - `events.html` and `scientifikart.html`: dated special-event stories and the ScientiFikART programme.
 - `about.html`, `join.html`, `testimonials.md`: the community, first-visit information and testimonials.
@@ -54,6 +54,8 @@ The available IDs and display labels are in `_data/talk_topics.yml`. Use only to
 The existing archive is curated in `_data/talk_tags.yml`, keyed by the source filename without `.md`. Nonempty front-matter `tags` take precedence over this table. Untagged future talks still appear in the archive; they simply have no topic links until tags are added. To introduce a topic, add its stable lowercase hyphenated ID and label to `talk_topics.yml` first. The build rejects unknown topic IDs to catch typos. The original archived post files remain unchanged.
 
 Selecting multiple topics returns talks with **all** selected topics; search and year filters apply as well. Tag links open the matching archive, and filter state is stored in the URL, for example `/talks/?tag=physics&tag=climate-environment&year=2025#archive`. Tags are visible on talk pages and archive entries even without JavaScript; filtering itself requires JavaScript.
+
+The archive shows ten matching past talks per page, including any featured cards. Page controls appear above and below the results, with a selector for jumping directly to a page. Search and filters cover the whole archive and return to page one when changed. The `page` URL parameter preserves the selected page when sharing or reloading. Browser Back and Forward restore page selections, including when using Back to return from a talk.
 
 `_plugins/event_dates.rb` treats date-only events as current through their calendar day in Europe/Stockholm. No end time is inferred. The browser updates an already-open or cached page after that boundary. Without JavaScript, pages retain their build-time selection and a fully readable archive.
 
