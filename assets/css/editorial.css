@@ -134,7 +134,7 @@ figcaption{font-size:12px;color:var(--muted);margin-top:12px}
 .format-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--ink);padding:23px 0;align-items:center}
 .format-row p{margin:0;font:italic 21px Georgia}
 .format-row h3{font-size:25px}
-.story-hero{display:grid;grid-template-columns:1.04fr 1fr;gap:8%;padding-bottom:65px;align-items:start}
+.story-hero{display:grid;grid-template-columns:1.04fr 1fr;gap:8%;padding:48px 0 65px;align-items:start}
 .story-hero h1{font-size:67px}
 .story-hero .lead{font-size:20px;margin-top:24px}
 .story-hero img{aspect-ratio:1;object-fit:cover}
@@ -293,7 +293,7 @@ body{font-size:16px}
 .format-row h3{font-size:26px}
 .format-row p{grid-column:1;grid-row:2;font-size:19px}
 .formats{padding:37px 0}
-.story-hero{grid-template-columns:1fr;gap:32px;padding-bottom:42px}
+.story-hero{grid-template-columns:1fr;gap:32px;padding:30px 0 42px}
 .story-hero h1{font-size:49px}
 .story-hero .lead{font-size:18px}
 .story-hero img{aspect-ratio:4/3}
