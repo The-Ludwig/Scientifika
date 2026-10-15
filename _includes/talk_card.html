@@ -4,7 +4,7 @@
   <div class="poster">{% include talk-image.html talk=talk %}</div>
   <h3>{{ talk.title | escape }}</h3>
   <p>{{ talk.speaker | strip_html | escape }}</p>
-  <div class="meta"><time datetime="{{ talk.sf_date }}">{{ talk.date | date: '%-d %b %Y' }}</time></div>
+  <div class="meta"><time datetime="{{ talk.sf_date }}">{{ talk.date | date: '%-d %b %Y' }}</time>{% if talk.sf_images.size > 0 and talk.img_credit != 'none' %}<span class="img-credit"> · {% include img-credit.html talk=talk short=true %}</span>{% endif %}</div>
   </a>
   {% include talk-tags.html talk=talk %}
 </article>
