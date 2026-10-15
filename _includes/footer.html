@@ -1,15 +1,20 @@
-<footer class="d-flex  p-0 bg-light rounded-3 mt-auto shadow">
-    <div class="p-2 mt-auto">
-        {% if page.longfooter %}
-        Made by <a href="https://ludwigneste.space/">Ludwig Neste</a> with <i class="bi bi-balloon-heart-fill"></i>
-        using <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, hosted on <a
-            href="https://github.com/The-Ludwig/Scientifika" target="_blank"><i class="bi bi-github"></i>Github</a>,
-        inspired by the <a href="https://www.getzola.org/themes/toucan/" target="_blank">Toucan theme for Zola</a>.
-        The header uses the <a href="https://fonts.google.com/specimen/Dancing+Script" target="_blank">Dancing Script font</a>.
-        <br>
-        {% endif %}
-        This page was last updated at {{ "now" | date: "%Y-%m-%d %H:%M" }}.
-        Seen a bug? Report it on <a href="https://github.com/The-Ludwig/Scientifika/issues" target="_blank">Github<i
-                class="bi bi-github"></i>.</a>
+<footer class="footer wrap">
+  <div class="footer-top">
+    <div>{% include brand.html %}<p>Science, conversation and fika.<br>A community across disciplines.<br>Hosted by <a href="https://nordita.org/">Nordita</a> and the <a href="https://www.okc.albanova.se/">Oskar Klein Centre</a>.</p></div>
+    <div class="footer-links">
+      <div><a href="{{ '/talks/' | relative_url }}">Talks & programme</a><a href="{{ '/events/' | relative_url }}">Beyond the talks</a><a href="{{ '/about/' | relative_url }}">Our story</a><a href="{{ '/testimonials/' | relative_url }}">Community voices</a></div>
+      <div><a href="{{ '/join/' | relative_url }}">Find us</a><a href="{{ site.data.community.forms.talk }}">Give a talk</a><a href="{{ site.data.community.forms.mailing }}">Mailing list</a></div>
+      <div><a href="{{ site.data.community.forms.attendance }}">Attendance form</a><a href="{{ site.data.community.forms.suggestion }}">Suggestion box</a><a href="mailto:scientifika@fysik.su.se">Contact</a></div>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <span>ScientiFika · Stockholm & Uppsala</span>
+    <a class="footer-instagram" href="https://www.instagram.com/scientifika.su/" aria-label="ScientiFika on Instagram">
+      <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true" focusable="false">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+      </svg>
+    </a>
+  </div>
 </footer>

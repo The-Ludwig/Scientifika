@@ -1,0 +1,25 @@
+# Existing public forms, preserved from the source website.
+forms:
+  mailing: "https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing"
+  talk: "https://docs.google.com/forms/d/e/1FAIpQLSdvz9m5FOU57K3mNYNjH04mTR2UGB1KAubC5khwf6u6_u0NUg/viewform?usp=sf_link"
+  attendance: "https://docs.google.com/forms/d/e/1FAIpQLScB_JMoqayw-absw3h_QmKlvyxnLHYckkmsoyeT4fbrG1NThg/viewform?usp=sf_link"
+  suggestion: "https://forms.gle/364xQjgWiZyDYAzA8"
+# Final ScientiFikART programme, 29 May 2026, Proviant, Campus Albano.
+# Source: 00_Raw/Slack/scientifika/F0B6Q44UGSY/ScientiFikART_schedule_final_no_lines_v2.pdf
+contributors:
+  - name: Benjamin Bose
+    work: The Language of Time
+  - name: Amna Irshad
+    work: When Antennas Start to Move
+  - name: Leon Holmgren
+    work: Saturn
+  - name: Harriet Wulff
+    work: Cosmic Cross Stitch
+  - name: Guilherme Franzmann
+    work: To Be or Not to Be, but Where?
+  - name: Wan-Ting Hseu
+    work: A Day of Ms. Missing
+  - name: Ludéric Chapel
+    work: Abell 370
+  - name: Anthony Bonfils
+    work: "Eurêka Moments: Beauty and the Daemon"

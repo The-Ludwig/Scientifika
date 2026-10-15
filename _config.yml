@@ -29,6 +29,7 @@ url: "https://scientifika.se" # the base hostname & protocol for your site, e.g.
 github_username:  The-Ludwig
 permalink: pretty
 future: true
+timezone: Europe/Stockholm
 
 # Build settings
 # theme: minima

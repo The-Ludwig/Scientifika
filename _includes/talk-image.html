@@ -1,0 +1,7 @@
+{%- assign artwork = include.image | default: include.talk.sf_images.first -%}
+{%- if artwork -%}
+  {%- if artwork.href -%}{%- assign artwork_url = artwork.href -%}{%- else -%}{%- assign artwork_url = artwork.path | relative_url -%}{%- endif -%}
+  {% if include.original_link %}<a class="image-original" href="{{ artwork_url | escape }}" aria-label="View original image{% if include.image_number %} {{ include.image_number | plus: 1 }}{% endif %} for {{ include.talk.title | escape }}">{% endif %}
+  <img src="{{ artwork_url | escape }}" class="{{ include.class | escape }}" alt="{% if artwork.alt %}{{ artwork.alt | escape }}{% else %}Image{% if include.image_number %} {{ include.image_number | plus: 1 }}{% endif %} accompanying {{ include.talk.title | escape }}{% endif %}" {% if artwork.center %}style="object-position: {{ artwork.center | escape }}"{% endif %} loading="{{ include.loading | default: 'lazy' }}" decoding="async">
+{% if include.original_link %}</a>{% endif %}
+{%- endif -%}

@@ -1,59 +1,38 @@
 ---
-layout: default
-title: "Home"
-navname: "Home"
+layout: base
+title: Home
+navname: Home
 ---
-<div class="container">
-    <div class="row flex-column-reverse flex-lg-row justify-content-between">
-        <div class="col-lg-9">
-            <div class="mb-5 row">
-                <div class="col-4 col-lg-2">
-                    <img class="img-fluid" src="{% link assets/Scientifika-logo.svg %}"/>
-                </div>
-                <div class="col-8 col-lg-10">
-                    <span class="col sf-logo fw-bold display-6">
-                        <span class="text-primary" style="margin-right: -0.2em;">Scienti</span>
-                        <span class="text-secondary">Fika</span>
-                    </span>
-                    is the place to be every Friday afternoon if you want to learn more about a variety of research fields while enjoying delicious Fika! We bring together researchers across different universities in Stockholm to share their passion for science and related topics, while nourishing a deep sense of community among junior researchers.
-                    <p class="mt-3 mb-0"><a href="{% link about.html %}#slides">A bit about us: discover ScientiFika in 11 slides →</a></p>
-                </div>
-            </div>
-            {% if site.categories.announcement %}
-            <div class="row" id="sf-announcements">
-                {% assign announcements_by_date = site.categories.announcement | sort: "date" | reverse %}
-                {% for post in announcements_by_date %}
-                <div class="" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-                {% include announcement.html talk=post id=forloop.index0%}
-                </div>
-                {% endfor %}
-            </div>
-            {% endif %}
-            <div id="sf-upcoming-section">
-                <h2>Upcoming</h2>
-                <h4>Friday <b>16:00</b> @ Nordita 6th floor</h4>
-                <div class="row" id="sf-upcoming">
-                    {% assign talks_by_date = site.categories.talk | sort: "date" %}
-                    <!-- This skips all the posts which are in the past, so the main page has a smaller loading time -->
-                    {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
-                    {% assign tomorrow_date = 'now' | date: '%s' | minus: seconds | date: '%s' %}
-                    {% for post in talks_by_date %}
-                    {% assign pre_date = post.date | date: '%s' %}
-                    {% if tomorrow_date > pre_date %} {% continue %} {% endif %}
-                    <div class="col-lg-12 sf-talk-card d-none" data-date='{{ post.date | date: "%Y-%m-%d" }}'>
-                    {% include talk_card.html talk=post%}
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 d-lg-flex mb-4 justify-content-start flex-column">
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSegmOTDLDQ46egDfAdh-JB_QHjRMoDtNGT7lrPMFF4GKLvyCw/viewform?usp=sharing">📋  Join the Mailing List</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdvz9m5FOU57K3mNYNjH04mTR2UGB1KAubC5khwf6u6_u0NUg/viewform?usp=sf_link">🧑‍🏫 Give a Talk!</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScB_JMoqayw-absw3h_QmKlvyxnLHYckkmsoyeT4fbrG1NThg/viewform?usp=sf_link">📊 Attendance Form</a>
-            <a class="btn btn-primary w-lg-75 m-2 fs-5 text-light" target="_blank" href="https://forms.gle/364xQjgWiZyDYAzA8"> 📬 Suggestion Box</a>
-        </div>
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-copy">
+      <h1><span class="hero-line">Come for</span><span class="hero-line">the science.</span><span class="serif italic">Stay for the fika.</span></h1>
+      <p>On Fridays, we bring together students and researchers across Stockholm’s universities to share their passion for science, explore different fields and enjoy delicious fika!</p>
+      <a class="button" href="{{ '/talks/' | relative_url }}">Find your next fika</a>
     </div>
+    {% include hero-posters.html %}
+  </section>
+  <div class="logistics" aria-label="Regular Stockholm gatherings">
+    <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3v4m10-4v4M4 10h16M4 5h16v16H4z"/></svg>Fridays at 16:00</span>
+    <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0z"/><circle cx="12" cy="10" r="2"/></svg>Nordita, 6th floor</span>
+    <span><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3zm13-17a3 3 0 1 1 0 6m2 4a5 5 0 0 1 3 4v3h-3"/></svg>Science. Conversation. Fika.</span>
+  </div>
+  {% include notices.html %}
+  <section class="next-section" aria-label="Next talk">
+    <div class="section-intro"><h2>Next up</h2><p>New perspectives.<br>Same good company.</p></div>
+    {% include next-talk.html mode='home' %}
+  </section>
 </div>
-
-<script defer src="{{site.baseurl}}/assets/js/upcoming.js"></script>
+<section class="yellow section">
+  <div class="wrap feature">
+    <figure class="art-frame"><img src="{{ '/assets/editorial/art-poster.jpg' | relative_url }}" loading="lazy" alt="Original ScientiFikART poster for 29 May 2026"></figure>
+    <div class="feature-info"><div class="small-label">Past event · 29 May 2026</div><h2>A different kind<br>of experiment.</h2><p>Science through art, music, poetry, sculpture, textiles and storytelling. Look back at ScientiFikART at Proviant, Campus Albano.</p><a class="button" href="{{ '/events/scientifikart-2026/' | relative_url }}">Explore ScientiFikART</a><div><a class="text-link" href="{{ '/events/' | relative_url }}">More beyond the talks</a></div></div>
+  </div>
+</section>
+<section class="section wrap">
+  <div class="feature">
+    <figure class="feature-photo"><img class="community-photo" src="{{ '/assets/editorial/community.jpg' | relative_url }}" loading="lazy" width="1600" height="1200" alt="Researchers gathered around tables for a ScientiFika talk"><figcaption>ScientiFika in 2024.</figcaption></figure>
+    <div class="community-copy"><h2>A room for<br><span class="serif italic">questions.</span></h2><p>You don’t need to work in the speaker’s field. Our talks are meant to be accessible across disciplines, with space to ask, discuss and get to know the people behind the research.</p><p class="muted">Most Fridays are for students and postdocs. Selected events bring the wider academic community together; each event tells you who it is for.</p><a class="text-link" href="{{ '/about/' | relative_url }}">Meet ScientiFika</a></div>
+  </div>
+</section>
+{% include invitation.html %}

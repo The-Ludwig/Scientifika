@@ -1,0 +1,15 @@
+# Editorial metadata and safeguards; original archived posts remain unchanged.
+# Paolo logistics and summary: local 2026-10-16 website brief and published social artwork.
+"/talk/2026/10/16/DiVecchia/":
+  time: "16:00–17:00"
+  venue: "Nordita, 6th floor · fika area"
+  introduction: "How can a theory take shape before its underlying equations are known? Paolo follows the path from particle scattering to string theory, and the unexpected connection between gauge theories and gravity."
+  image_alts:
+    - "Portrait of Paolo Di Vecchia"
+# The Fattahi body exactly duplicates Lemon's 3 October 2025 abstract.
+# Do not substitute new scientific text without an authoritative source.
+"/talk/2025/10/10/Fattahi/":
+  abstract_unavailable: true
+# The supplied URL belongs to Fraser Miller, not Daniel Gillies.
+"/talk/2026/03/06/Gillies/":
+  hide_speaker_link: true

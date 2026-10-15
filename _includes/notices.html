@@ -1,0 +1,15 @@
+{% if site.sf_announcements.size > 0 %}
+<section class="notice-list" data-announcement-list aria-label="Announcements">
+  {% for notice in site.sf_announcements %}
+  <article class="notice" data-upcoming-only data-end="{{ notice.sf_end_epoch }}">
+    <div class="notice-content">
+      <div class="small-label">Announcement · <time datetime="{{ notice.sf_date }}">{{ notice.date | date: '%-d %B %Y' }}</time></div>
+      <h2>{{ notice.title | escape }}</h2>
+      <div class="notice-body">{{ notice.content }}</div>
+      <a class="text-link" href="{{ notice.url | relative_url }}">Announcement details</a>
+    </div>
+    {% if notice.sf_images.size > 0 %}<figure class="notice-artwork">{% include talk-image.html talk=notice %}{% if notice.img_credit and notice.img_credit != 'none' %}<figcaption>{{ notice.img_credit }}</figcaption>{% endif %}</figure>{% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endif %}

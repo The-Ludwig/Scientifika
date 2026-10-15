@@ -1,6 +1,8 @@
 ---
 layout: base
 ---
-<div class="container-fluid my-3 p-0">
-{{ content }}
+<div class="wrap legacy-content">
+  <header class="page-heading legacy-heading"><a class="back text-link" href="{{ '/talks/' | relative_url }}">Back to the programme</a><p class="small-label">{% if page.sf_is_upcoming %}Announcement{% else %}Archived announcement{% endif %} · {{ page.date | date: '%-d %B %Y' }}</p><h1>{{ page.title | escape }}</h1></header>
+  {% unless page.sf_is_upcoming %}<div class="archive-context"><p>This is an announcement from {{ page.date | date: '%Y' }}. Dates, invitations and registration links below belong to that original announcement.</p>{% if page.url == '/2026/03/27/ScientiFikART/' %}<p>The April 2026 submission period has closed. <a href="{{ '/events/scientifikart-2026/' | relative_url }}">Explore the ScientiFikART event and programme.</a></p>{% endif %}{% if page.url == '/2025/01/20/new_year/' %}<p>The black-hole talk mentioned below is <a href="{{ '/talk/2025/01/24/Ezquiaga/' | relative_url }}">“When black holes meet each other”, 24 January 2025</a>.</p>{% endif %}</div>{% endunless %}
+  <article class="legacy-body">{{ content }}</article>
 </div>

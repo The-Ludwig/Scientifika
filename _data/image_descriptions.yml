@@ -1,0 +1,36 @@
+# Descriptions based on direct inspection of the original local images.
+# Describe visible content; do not turn schematic proposals into established results.
+"assets/images/talks/2026-03-06/1.jpg":
+  alt: "Speaker portrait supplied with Daniel Gillies’s talk"
+"assets/images/talks/2026-03-06/2.jpg":
+  alt: "Schematic particle collision with branching lines representing particle showers"
+  caption: "A schematic particle-collision event."
+"assets/images/talks/2026-03-06/LHC.svg.png":
+  alt: "Accelerator-ring diagram showing the LHC and the ALICE, ATLAS, CMS and LHCb experiments, with the SPS and PS rings below"
+  caption: "The LHC experiments and accelerator rings."
+"assets/images/talks/2024-10-11-01.png":
+  alt: "The speaker presenting a slide about the history of the photoelectric effect at ScientiFika"
+"assets/images/talks/2024-10-11.png":
+  alt: "Proposed graviton-detection scheme: gravitational waves from a neutron-star merger drive coupled mechanical masses, with optical readout of a single-phonon energy step"
+  caption: "The proposed detection scheme discussed in the talk, linking gravitational-wave absorption to an optical readout."
+"assets/images/talks/2025-10-24/l.png":
+  alt: "Close-up of a patterned superconducting circuit chip"
+"assets/images/talks/2025-10-24/nobel_2025 - Andrea Maiani.png":
+  alt: "Illustrated portraits labelled John Clarke, Michel H. Devoret and John M. Martinis, above the 2025 Nobel physics citation on tunnelling and energy quantisation in a circuit"
+  caption: "The 2025 Nobel announcement included in the original talk materials."
+"assets/images/talks/2025-10-24/small - Andrea Maiani.jpg":
+  alt: "Speaker portrait supplied with Andrea Maiani’s talk"
+"assets/images/talks/2025-10-24/sycamore - Andrea Maiani.jpeg":
+  alt: "Photograph of the Sycamore chip, labelled Google AI Quantum, with fine connecting wires"
+  caption: "The Sycamore chip, shown in the original talk materials."
+"assets/images/talks/2026-03-27/1.jpeg":
+  alt: "Speaker portrait supplied with Thong Nguyen’s talk"
+"assets/images/talks/2026-03-27/2.jpg":
+  alt: "Chart of proposed dark-matter candidates across mass scales, ranging from wave-like axions and ultralight fields to particle-like and macroscopic candidates"
+  caption: "A map of candidate models across dark-matter mass scales; these are proposed possibilities."
+"assets/images/talks/2026-03-27/3.jpg":
+  alt: "Illustrated timeline of dark-matter research, naming Fritz Zwicky, Vera Rubin, DAMA and several search experiments, ending in a question about observing dark matter"
+  caption: "A historical illustration of the search for dark matter."
+"assets/images/talks/2026-03-27/4.jpg":
+  alt: "Illustration contrasting familiar matter particles with hypothetical dark-matter candidates, including axions, neutralinos, gravitinos and WIMPs"
+  caption: "Familiar particles beside possible dark-matter candidates, shown as an illustration."
