@@ -1,0 +1,36 @@
+# Stable IDs used in talk front matter, archive URLs and talk_tags.yml.
+# Keep labels readable; the leading # is added by the templates.
+- id: physics
+  label: Physics
+- id: astronomy-cosmology
+  label: Astronomy & cosmology
+- id: quantum-physics
+  label: Quantum physics
+- id: mathematics
+  label: Mathematics
+- id: biology
+  label: Biology
+- id: chemistry
+  label: Chemistry
+- id: health-neuroscience
+  label: Health & neuroscience
+- id: psychology
+  label: Psychology
+- id: climate-environment
+  label: Climate & environment
+- id: ai-data
+  label: AI & data
+- id: history-society
+  label: History & society
+- id: philosophy
+  label: Philosophy
+- id: science-communication
+  label: Science communication
+- id: art
+  label: Art
+- id: academic-life
+  label: Academic life
+- id: outside-academia
+  label: Outside academia
+- id: community-events
+  label: Community events

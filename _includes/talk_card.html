@@ -1,7 +1,10 @@
 {% assign talk = include.talk %}
-<a class="poster-card" href="{{ talk.url | relative_url }}" data-archive-entry data-end="{{ talk.sf_end_epoch }}" data-year="{{ talk.sf_year }}" data-search="{{ talk.title | append: ' ' | append: talk.speaker | strip_html | escape }}">
+<article class="poster-card" data-archive-entry data-end="{{ talk.sf_end_epoch }}" data-year="{{ talk.sf_year }}" data-tags="{{ talk.sf_tags | map: 'id' | join: ' ' | escape }}" data-search="{{ talk.title | append: ' ' | append: talk.speaker | append: ' ' | append: talk.sf_tag_search | strip_html | escape }}">
+  <a class="poster-card-main" href="{{ talk.url | relative_url }}">
   <div class="poster">{% include talk-image.html talk=talk %}</div>
   <h3>{{ talk.title | escape }}</h3>
   <p>{{ talk.speaker | strip_html | escape }}</p>
   <div class="meta"><time datetime="{{ talk.sf_date }}">{{ talk.date | date: '%-d %b %Y' }}</time></div>
-</a>
+  </a>
+  {% include talk-tags.html talk=talk %}
+</article>

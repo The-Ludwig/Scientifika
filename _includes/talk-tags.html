@@ -1,0 +1,5 @@
+{% if include.talk.sf_tags.size > 0 %}
+<ul class="talk-tags" aria-label="Topics">
+  {% for tag in include.talk.sf_tags %}<li><a class="talk-tag" href="{{ '/talks/' | relative_url }}?tag={{ tag.id | url_encode }}#archive" aria-label="Browse past talks tagged {{ tag.label | escape }}">#{{ tag.label | escape }}</a></li>{% endfor %}
+</ul>
+{% endif %}
