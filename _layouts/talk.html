@@ -3,7 +3,7 @@ layout: base
 ---
 <div class="wrap">
   <div class="page-heading talk-breadcrumb"><a class="back" href="{{ '/talks/' | relative_url }}">← Back to the programme</a></div>
-  <article class="detail talk-detail {% if page.sf_images.size == 0 %}detail-no-art{% endif %}">
+  <article class="detail talk-detail {% if page.sf_images.size == 0 or page.images_in_content %}detail-no-art{% endif %}">
     <div class="talk-intro">
       <div class="small-label">{% if page.sf_is_upcoming %}Upcoming talk{% else %}Past event{% endif %} · <time datetime="{{ page.sf_date }}">{{ page.date | date: '%-d %B %Y' }}</time></div>
       <h1>{{ page.title | escape }}</h1>
@@ -23,7 +23,9 @@ layout: base
       {% if page.presentation %}{% assign presentation = page.presentation | prepend: '/assets/presentations/' %}<a class="button outline" href="{{ presentation | relative_url }}" target="_blank" rel="noopener">View the presentation</a>{% endif %}
       {% if page.sf_speaker_link %}<a class="text-link" href="{{ page.sf_speaker_link | escape }}" target="_blank" rel="noopener">About the speaker</a>{% endif %}
     </div>
+    {% unless page.images_in_content %}
     {% if page.sf_images.size > 0 %}<div class="talk-artwork"><figure>{% include talk-image.html talk=page class='poster-detail' loading='eager' original_link=true %}{% if page.sf_images.first.caption %}<figcaption>{{ page.sf_images.first.caption | escape }}</figcaption>{% endif %}{% unless page.img_credit == 'none' %}<figcaption class="img-credit">{% include img-credit.html talk=page %}</figcaption>{% endunless %}</figure></div>{% endif %}
     {% if page.sf_images.size > 1 %}<section class="talk-gallery-section" aria-label="Images accompanying the talk"><h2>Alongside the talk</h2><p class="gallery-instruction">Select an image to view the original.</p><div class="talk-image-gallery">{% for artwork in page.sf_images offset:1 %}<figure>{% include talk-image.html talk=page image=artwork class='poster-detail' original_link=true image_number=forloop.index %}{% if artwork.caption %}<figcaption>{{ artwork.caption | escape }}</figcaption>{% endif %}{% unless page.img_credit == 'none' %}<figcaption class="img-credit">{% include img-credit.html talk=page %}</figcaption>{% endunless %}</figure>{% endfor %}</div></section>{% endif %}
+    {% endunless %}
   </article>
 </div>
