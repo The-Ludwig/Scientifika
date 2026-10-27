@@ -767,3 +767,7 @@ figcaption.img-credit,.talk-image-gallery figcaption.img-credit { font-size:12px
 .event-logistics .img-credit { font-size:12px; color:var(--muted); }
 /* The image itself is hidden on phones, so its credit goes too. */
 @media(max-width:760px) { .event-logistics .img-credit { display:none; } }
+
+/* Inline figures for event pages that place one image with each talk. */
+.talk-section-image { margin:28px 0 48px; }
+.talk-section-image img { display:block; width:auto; height:auto; max-width:100%; max-height:380px; margin-inline:auto; object-fit:contain; }
