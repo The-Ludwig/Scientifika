@@ -26,6 +26,7 @@ There are monsters in the cosmos—and ghostly particles that can help us find t
 
 <figure class="talk-section-image">
   <a href="{{ '/assets/images/talks/2026-10-30/04-gal_Multimessenger_Cwlv-PXQ_-_Ludwig_Neste.jpeg' | relative_url }}"><img src="{{ '/assets/images/talks/2026-10-30/04-gal_Multimessenger_Cwlv-PXQ_-_Ludwig_Neste.jpeg' | relative_url }}" alt="Illustration of the IceCube detector array and a blue glow, supplied by Ludwig Neste." width="2048" height="1439" loading="lazy"></a>
+  <figcaption class="img-credit">Credit: <a href="https://icecube.wisc.edu/gallery/neutrino-emission-from-ngc-1068/" target="_blank" rel="noopener">Nicolle R. Fuller/NSF/IceCube</a></figcaption>
 </figure>
 
 ### The ghost in the fabric: where spacetime begins and ends

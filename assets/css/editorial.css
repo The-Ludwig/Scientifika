@@ -769,5 +769,7 @@ figcaption.img-credit,.talk-image-gallery figcaption.img-credit { font-size:12px
 @media(max-width:760px) { .event-logistics .img-credit { display:none; } }
 
 /* Inline figures for event pages that place one image with each talk. */
-.talk-section-image { margin:28px 0 48px; }
+.talk-section-image { margin:28px auto 48px; width:fit-content; min-width:min(100%,9rem); max-width:100%; }
+.talk-section-image figcaption { contain:inline-size; }
+.talk-section-image figcaption a { text-decoration:underline; text-underline-offset:2px; }
 .talk-section-image img { display:block; width:auto; height:auto; max-width:100%; max-height:380px; margin-inline:auto; object-fit:contain; }
